@@ -1,0 +1,795 @@
+Header
+container
+Desktop
+Wrapper
+Link Wrapper
+Name
+Logo and Name
+Logo Image
+Links
+Variant 1
+Line
+Variant 1
+Line
+Closed
+Line
+Closed
+Frame
+Icon
+Variant 1
+Line
+Wrap
+Navigation Button
+Content Wrapper
+Top Content
+Icon
+Bottom Content
+Icon
+Header
+container
+Phone
+Wrapper
+Link Wrapper
+Name
+Logo and Name
+Logo Image
+Wrap
+Icon
+Bottom
+Top
+BG
+Header
+container
+Phone
+Wrapper
+Link Wrapper
+Name
+Logo and Name
+Logo Image
+Wrap
+Icon
+Bottom
+Top
+BG
+Hero Section
+Container
+Content
+Left Content
+Heading Content
+Title
+Variant 1
+Variant 1
+Variant 1
+Variant 1
+Content Wrapper
+Top Content
+Bottom Content
+Variant 1
+Content Wrapper
+Top Content
+Bottom Content
+Variant 1
+Content Wrapper
+Top Content
+Bottom Content
+Right Content
+Card Wrapper 01
+Hero Card
+Hero Card
+Hero Card
+Rating
+Number
+Wrapper
+Icon Wrapper
+Star
+Star
+Star
+Star
+Star
+Avatar
+Card Wrapper 02
+User
+Shape
+Number
+Hero Card
+Hero Card
+Space
+Trigger
+About Section
+Desktop Secondary
+Image
+Phone
+Container
+Content
+Title Wrapper
+Variant 2
+Variant 4
+Text Wrapper
+Content
+Arrow Wrapper
+Variant 1
+Variant 1
+Image
+Tablet
+Container
+Content
+Title Wrapper
+Variant 2
+Variant 5
+Text Wrapper
+Content
+Arrow Wrapper
+Variant 1
+Variant 1
+Image
+Helper
+Service Section
+Container
+Content
+Content Wrapper
+Title
+Variant 1
+Variant 1
+Variant 1
+Card Wrapper
+Card Wrapper 01
+Variant 1
+Content
+Image Wrapper
+Variant 2
+Content
+Image Wrapper
+Variant 2
+Content
+Image Wrapper
+Card Wrapper 02
+Variant 1
+Content
+Image Wrapper
+Variant 2
+Content
+Image Wrapper
+Variant 2
+Content
+Image Wrapper
+Card Wrapper 03
+Variant 1
+Content
+Image Wrapper
+Variant 2
+Content
+Image Wrapper
+Variant 1
+Content Wrapper
+Top Content
+Bottom Content
+Variant 1
+Content Wrapper
+Top Content
+Bottom Content
+Variant 1
+Content Wrapper
+Top Content
+Bottom Content
+Trigger
+F1
+F2
+F3
+F4
+Choose Us Section
+Container
+Content
+Title Wrapper
+Variant 3
+Variant 3
+Variant 3
+Counter Wrapper
+Wrapper
+Feature Wrapper
+Video Wrapper
+List Wrapper
+Counter
+Line
+Line
+Line
+Content
+Counter
+Line
+Line
+Line
+Content
+Counter
+Line
+Line
+Line
+Content
+Counter
+Line
+Line
+Line
+Content
+Case Study Section
+Container
+Content
+Left Content
+Title
+Variant 1
+Variant 1
+Variant 1
+Author Wrapper
+Variant 1
+Name
+Designation
+Variant 1
+Name
+Designation
+Variant 1
+Name
+Designation
+Variant 1
+Name
+Designation
+Variant 1
+Name
+Designation
+Variant 1
+Name
+Designation
+Card Wrapper
+Case Study Card
+Variant 1
+Play Icon
+Variant 2
+Play Icon
+Case Study Card
+Variant 2
+Play Icon
+Case Study Card
+Variant 1
+Play Icon
+Variant 2
+Play Icon
+Case Study Card
+Variant 2
+Play Icon
+Case Study Card
+Variant 1
+Play Icon
+Variant 2
+Play Icon
+Case Study Card
+Variant 2
+Play Icon
+Testimonial Section
+Container
+Content
+Title Wrapper
+Variant 1
+Variant 1
+Variant 1
+Wrapper
+Card Wrapper
+Variant 1
+Quote Icon
+Content Wrapper
+Name
+Line
+Rating
+Variant 2
+Quote Icon
+Content Wrapper
+Name
+Line
+Rating
+Variant 2
+Quote Icon
+Content Wrapper
+Name
+Line
+Rating
+Variant 1
+Quote Icon
+Content Wrapper
+Name
+Line
+Rating
+Variant 2
+Quote Icon
+Content Wrapper
+Name
+Line
+Rating
+Variant 2
+Quote Icon
+Content Wrapper
+Name
+Line
+Rating
+Variant 1
+Quote Icon
+Content Wrapper
+Name
+Line
+Rating
+Variant 2
+Quote Icon
+Content Wrapper
+Name
+Line
+Rating
+Variant 2
+Quote Icon
+Content Wrapper
+Name
+Line
+Rating
+user
+Avatar
+Avatar
+Number
+Team Section
+Container
+Content
+Heading
+Variant 1
+Variant 1
+Variant 1
+Title
+Variant 2
+Content Wrapper
+Top Content
+Bottom Content
+Variant 2
+Content Wrapper
+Top Content
+Bottom Content
+Variant 2
+Content Wrapper
+Top Content
+Bottom Content
+Card Wrapper
+Variant 1
+Image Wrapper
+Team Image
+Content
+Name
+Wrapper
+Designation
+Link Wrapper
+Variant 1
+Variant 1
+Variant 1
+Variant 1
+Image Wrapper
+Team Image
+Content
+Name
+Wrapper
+Designation
+Link Wrapper
+Variant 1
+Variant 1
+Variant 1
+Variant 1
+Image Wrapper
+Team Image
+Content
+Name
+Wrapper
+Designation
+Link Wrapper
+Variant 1
+Variant 1
+Variant 1
+Variant 1
+Image Wrapper
+Team Image
+Content
+Name
+Wrapper
+Designation
+Link Wrapper
+Variant 1
+Variant 1
+Variant 1
+Variant 1
+Image Wrapper
+Team Image
+Content
+Name
+Wrapper
+Designation
+Link Wrapper
+Variant 1
+Variant 1
+Variant 1
+Variant 1
+Image Wrapper
+Team Image
+Content
+Name
+Wrapper
+Designation
+Link Wrapper
+Variant 1
+Variant 1
+Variant 1
+Variant 1
+Image Wrapper
+Team Image
+Content
+Name
+Wrapper
+Designation
+Link Wrapper
+Variant 1
+Variant 1
+Variant 1
+Variant 1
+Image Wrapper
+Team Image
+Content
+Name
+Wrapper
+Designation
+Link Wrapper
+Variant 1
+Variant 1
+Variant 1
+Variant 1
+Image Wrapper
+Team Image
+Content
+Name
+Wrapper
+Designation
+Link Wrapper
+Variant 1
+Variant 1
+Variant 1
+Variant 1
+Image Wrapper
+Team Image
+Content
+Name
+Wrapper
+Designation
+Link Wrapper
+Variant 1
+Variant 1
+Variant 1
+Variant 1
+Image Wrapper
+Team Image
+Content
+Name
+Wrapper
+Designation
+Link Wrapper
+Variant 1
+Variant 1
+Variant 1
+Variant 1
+Image Wrapper
+Team Image
+Content
+Name
+Wrapper
+Designation
+Link Wrapper
+Variant 1
+Variant 1
+Variant 1
+Ticker
+Ticker Card 01
+Variant 1
+Icon
+Ticker Card 02
+Variant 1
+Icon
+Ticker Card 03
+Variant 1
+Icon
+Ticker Card 04
+Variant 1
+Icon
+Blog Section
+Container
+Content
+Title Wrapper
+Variant 1
+Variant 1
+Variant 1
+Wrapper
+Card Wrapper
+Variant 1
+Left Content
+category
+Date
+Right Content
+Wrapper
+Content
+Button
+Variant 2
+Left Content
+category
+Date
+Right Content
+Wrapper
+Content
+Button
+Variant 3
+Left Content
+category
+Date
+Right Content
+Wrapper
+Content
+Button
+Variant 1
+Left Content
+category
+Date
+Right Content
+Wrapper
+Content
+Button
+Variant 2
+Left Content
+category
+Date
+Right Content
+Wrapper
+Content
+Button
+Variant 3
+Left Content
+category
+Date
+Right Content
+Wrapper
+Content
+Button
+Variant 1
+Left Content
+category
+Date
+Right Content
+Wrapper
+Content
+Button
+Variant 2
+Left Content
+category
+Date
+Right Content
+Wrapper
+Content
+Button
+Variant 3
+Left Content
+category
+Date
+Right Content
+Wrapper
+Content
+Button
+Variant 2
+Content Wrapper
+Top Content
+Bottom Content
+Variant 2
+Content Wrapper
+Top Content
+Bottom Content
+Variant 2
+Content Wrapper
+Top Content
+Bottom Content
+CTA Section
+Container
+Content
+Wrapper
+Title Wrapper
+Variant 2
+Variant 2
+Variant 1
+Content Wrapper
+Top Content
+Bottom Content
+Variant 1
+Content Wrapper
+Top Content
+Bottom Content
+Wrapper
+Title Wrapper
+Variant 2
+Variant 1
+Content Wrapper
+Top Content
+Bottom Content
+Remove This Buy Promo
+Remove This Arrow
+Variant 1
+Main
+Remove This Buy Button
+Remove Button
+Remove This Buy Button
+Footer Section
+Desktop
+Container
+Content
+Logo Content
+Logo
+Wrapper
+Footer Content
+Top Content
+About Content
+About
+Logo Wrapper
+Variant 1
+Icon Wrapper
+Social Wrapper
+YouTube
+YouTube
+Variant 1
+Icon Wrapper
+Social Wrapper
+YouTube
+YouTube
+Variant 1
+Icon Wrapper
+Social Wrapper
+YouTube
+YouTube
+Variant 1
+Icon Wrapper
+Social Wrapper
+YouTube
+YouTube
+Variant 1
+Icon Wrapper
+Social Wrapper
+YouTube
+YouTube
+Variant 1
+Icon Wrapper
+Social Wrapper
+YouTube
+YouTube
+Logo Wrapper
+Link wrapper
+Page Link
+Link Wrapper
+Service Link
+Link Wrapper
+Bottom Content
+Phone Link
+Link Wrapper
+Email Link
+Link Wrapper
+Wrapper
+Address
+Link Wrapper
+Opening hours
+Link Wrapper
+Phone
+Container
+Content
+Logo Content
+Logo
+Wrapper
+Footer Content
+Top Content
+About Content
+About
+Logo Wrapper
+Variant 1
+Icon Wrapper
+Social Wrapper
+YouTube
+YouTube
+Variant 1
+Icon Wrapper
+Social Wrapper
+YouTube
+YouTube
+Variant 1
+Icon Wrapper
+Social Wrapper
+YouTube
+YouTube
+Variant 1
+Icon Wrapper
+Social Wrapper
+YouTube
+YouTube
+Variant 1
+Icon Wrapper
+Social Wrapper
+YouTube
+YouTube
+Variant 1
+Icon Wrapper
+Social Wrapper
+YouTube
+YouTube
+Link wrapper
+Page Link
+Link Wrapper
+Service Link
+Link Wrapper
+Bottom Content
+Phone Link
+Link Wrapper
+Email Link
+Link Wrapper
+Wrapper
+Address
+Link Wrapper
+Opening hours
+Link Wrapper
+Tablet
+Container
+Content
+Logo Content
+Logo
+Wrapper
+Footer Content
+Top Content
+About Content
+About
+Logo Wrapper
+Variant 1
+Icon Wrapper
+Social Wrapper
+YouTube
+YouTube
+Variant 1
+Icon Wrapper
+Social Wrapper
+YouTube
+YouTube
+Variant 1
+Icon Wrapper
+Social Wrapper
+YouTube
+YouTube
+Variant 1
+Icon Wrapper
+Social Wrapper
+YouTube
+YouTube
+Variant 1
+Icon Wrapper
+Social Wrapper
+YouTube
+YouTube
+Variant 1
+Icon Wrapper
+Social Wrapper
+YouTube
+YouTube
+Logo Wrapper
+Link wrapper
+Page Link
+Link Wrapper
+Service Link
+Link Wrapper
+Bottom Content
+Phone Link
+Link Wrapper
+Email Link
+Link Wrapper
+Wrapper
+Address
+Link Wrapper
+Opening hours
+Link Wrapper
+Light
+Backdrop
+Content
+Logo
+Text
+Bottom
+Border
