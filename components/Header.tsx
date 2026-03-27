@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
+import { motion, AnimatePresence, useReducedMotion, type Variants } from "framer-motion";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Data
@@ -42,12 +42,12 @@ const desktopLinks = [
 // Animation variants
 // ─────────────────────────────────────────────────────────────────────────────
 
-const overlayVariants = {
+const overlayVariants: Variants = {
   closed: { opacity: 0, transition: { duration: 0.3, ease: [0.4, 0, 0.2, 1] } },
   open: { opacity: 1, transition: { duration: 0.35, ease: [0.4, 0, 0.2, 1] } },
 };
 
-const panelVariants = {
+const panelVariants: Variants = {
   closed: {
     clipPath: "inset(0% 0% 100% 0% round 0px)",
     transition: {
@@ -69,7 +69,7 @@ const panelVariants = {
   },
 };
 
-const linkItemVariants = {
+const linkItemVariants: Variants = {
   closed: {
     opacity: 0,
     y: 28,
@@ -82,7 +82,7 @@ const linkItemVariants = {
   },
 };
 
-const footerVariants = {
+const footerVariants: Variants = {
   closed: { opacity: 0, y: 16, transition: { duration: 0.2 } },
   open: {
     opacity: 1,

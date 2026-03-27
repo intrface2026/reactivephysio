@@ -9,6 +9,7 @@ import {
   useMotionValue,
   useSpring,
   useTransform,
+  type Variants,
 } from "framer-motion";
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -136,12 +137,12 @@ export function Footer() {
   const rootRef = useRef<HTMLElement>(null);
   const isInView = useInView(rootRef, { once: true, margin: "-60px" });
 
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: {},
     visible: { transition: { staggerChildren: 0.09 } },
   };
 
-  const fadeUp = {
+  const fadeUp: Variants = {
     hidden: { opacity: 0, y: 32 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1] } },
   };
