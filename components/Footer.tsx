@@ -2,13 +2,10 @@
 
 import React, { useRef } from "react";
 import Link from "next/link";
-import Image from "next/image";
+
 import {
   motion,
   useInView,
-  useMotionValue,
-  useSpring,
-  useTransform,
   type Variants,
 } from "framer-motion";
 
@@ -79,37 +76,7 @@ const socials = [
 // Sub-components
 // ─────────────────────────────────────────────────────────────────────────────
 
-/** Tilt card wrapper — mouse-tracking 3D perspective */
-function TiltCard({ children, className }: { children: React.ReactNode; className?: string }) {
-  const ref = useRef<HTMLDivElement>(null);
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
-  const springX = useSpring(x, { stiffness: 180, damping: 22 });
-  const springY = useSpring(y, { stiffness: 180, damping: 22 });
-  const rotateX = useTransform(springY, [-0.5, 0.5], ["4deg", "-4deg"]);
-  const rotateY = useTransform(springX, [-0.5, 0.5], ["-4deg", "4deg"]);
 
-  const handleMouse = (e: React.MouseEvent<HTMLDivElement>) => {
-    const el = ref.current;
-    if (!el) return;
-    const rect = el.getBoundingClientRect();
-    x.set((e.clientX - rect.left) / rect.width - 0.5);
-    y.set((e.clientY - rect.top) / rect.height - 0.5);
-  };
-  const reset = () => { x.set(0); y.set(0); };
-
-  return (
-    <motion.div
-      ref={ref}
-      onMouseMove={handleMouse}
-      onMouseLeave={reset}
-      style={{ rotateX, rotateY, transformStyle: "preserve-3d", perspective: 800 }}
-      className={className}
-    >
-      {children}
-    </motion.div>
-  );
-}
 
 /** Animated link with underline slide */
 function FooterLink({ name, href }: { name: string; href: string }) {
@@ -181,68 +148,7 @@ export function Footer() {
         />
       </div>
 
-      {/* ── CTA Banner ── */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={isInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-        className="relative border-b border-white/8"
-      >
-        <TiltCard className="mx-auto max-w-7xl px-6 py-14 md:px-10 md:py-16">
-          <div
-            className="relative flex flex-col items-center justify-between gap-6 overflow-hidden rounded-3xl px-8 py-12 md:flex-row md:gap-4 md:px-12"
-            style={{
-              background:
-                "linear-gradient(135deg, rgba(197,110,94,0.18) 0%, rgba(197,110,94,0.04) 60%, rgba(100,120,200,0.08) 100%)",
-              border: "1px solid rgba(197,110,94,0.2)",
-              boxShadow: "inset 0 1px 0 rgba(255,255,255,0.06)",
-            }}
-          >
-            {/* Shine sweep */}
-            <motion.div
-              aria-hidden
-              className="pointer-events-none absolute inset-0"
-              style={{
-                background:
-                  "linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.04) 50%, transparent 60%)",
-                backgroundSize: "200% 100%",
-              }}
-              animate={{ backgroundPosition: ["200% 0", "-200% 0"] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "linear", repeatDelay: 2 }}
-            />
 
-            <div className="relative text-center md:text-left">
-              <p className="mb-1 text-xs font-semibold uppercase tracking-[0.16em] text-brand/70">
-                Ready to heal?
-              </p>
-              <h2 className="text-2xl font-bold tracking-tight text-white md:text-3xl">
-                Book your free consultation
-              </h2>
-            </div>
-
-            <motion.div whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }}>
-              <Link
-                href="/contact"
-                className="group relative inline-flex shrink-0 items-center gap-2.5 overflow-hidden rounded-full bg-brand px-8 py-3.5 text-sm font-semibold text-white shadow-[0_0_32px_rgba(197,110,94,0.4)] transition-all duration-300 hover:shadow-[0_0_48px_rgba(197,110,94,0.65)]"
-              >
-                {/* Button inner shine */}
-                <span
-                  aria-hidden
-                  className="absolute inset-0 translate-x-[-100%] skew-x-[-18deg] bg-white/20 transition-transform duration-500 group-hover:translate-x-[200%]"
-                />
-                <span className="relative z-10">Get Started Today</span>
-                <svg
-                  className="relative z-10 transition-transform duration-300 group-hover:translate-x-1"
-                  width="14" height="14" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
-                >
-                  <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
-              </Link>
-            </motion.div>
-          </div>
-        </TiltCard>
-      </motion.div>
 
       {/* ── Main Grid ── */}
       <motion.div
