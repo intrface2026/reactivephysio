@@ -3,9 +3,9 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Blog – Phisio | Physiotherapy Insights & Recovery Tips",
+  title: "Blog – Reactive | Physiotherapy Insights & Recovery Tips",
   description:
-    "Expert physiotherapy advice, recovery tips, and health insights from the Phisio team. Stay informed and live better.",
+    "Expert physiotherapy advice, recovery tips, and health insights from Reactive. Stay informed and live better.",
 };
 
 const categories = ["All", "Wellness", "Recovery", "Aesthetics", "Sports", "Women's Health"];
@@ -109,7 +109,7 @@ export default function BlogPage() {
             <span className="text-brand">insights</span>
           </h1>
           <p className="mt-6 max-w-xl text-lg text-white/60 leading-relaxed">
-            Expert physiotherapy advice, recovery tips, and health insights from the Phisio clinical team.
+            Expert physiotherapy advice, recovery tips, and health insights from the Reactive clinical team.
           </p>
         </div>
       </section>

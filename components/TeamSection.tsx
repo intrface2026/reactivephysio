@@ -5,222 +5,166 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-const teamMembers = [
-  {
-    id: 1,
-    name: "Mateo R. Albright",
-    designation: "Physician",
-    image:
-      "https://framerusercontent.com/images/IZLlZCsR8N2MwI5SDbpqgI446M.png",
-    slug: "mateo-r-albright",
-    socials: {
-      facebook: "https://www.facebook.com/",
-      twitter: "https://x.com/",
-      linkedin: "https://www.linkedin.com/",
-    },
-  },
-  {
-    id: 2,
-    name: "Javier C. Emerson",
-    designation: "Physician",
-    image:
-      "https://framerusercontent.com/images/t1QOMAtulA7DvOsUx3HooiC5xA.png",
-    slug: "javier-c-emerson",
-    socials: {
-      facebook: "https://www.facebook.com/",
-      twitter: "https://x.com/",
-      linkedin: "https://www.linkedin.com/",
-    },
-  },
-  {
-    id: 3,
-    name: "Leonardo F. Ashton",
-    designation: "Physician",
-    image: "https://framerusercontent.com/images/cphnFeLljI5C2dQ9FCpjg8HU.png",
-    slug: "leonardo-f-ashton",
-    socials: {
-      facebook: "https://www.facebook.com/",
-      twitter: "https://x.com/",
-      linkedin: "https://www.linkedin.com/",
-    },
-  },
-  {
-    id: 4,
-    name: "Ricardo P. Winslow",
-    designation: "Physician",
-    image:
-      "https://framerusercontent.com/images/brafNVtzcB9RUigLb7pJIdLKIfw.png",
-    slug: "ricardo-p-winslow",
-    socials: {
-      facebook: "https://www.facebook.com/",
-      twitter: "https://x.com/",
-      linkedin: "https://www.linkedin.com/",
-    },
-  },
-];
-
 export function TeamSection() {
   return (
-    <section className="w-full bg-[#f2f2f2] px-6 py-24 md:px-10 md:py-32">
+    <section className="w-full bg-[#f8f8f8] px-6 py-24 md:px-10 md:py-32 overflow-hidden relative">
+      {/* Decorative radial background orb */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute right-0 top-1/4 h-[500px] w-[500px] rounded-full opacity-[0.03]"
+        style={{
+          background: "radial-gradient(circle, var(--color-brand) 0%, transparent 70%)",
+          filter: "blur(60px)",
+        }}
+      />
+
       <div className="mx-auto w-full max-w-7xl">
-        {/* Header */}
-        <div className="mb-16 flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
-          <div className="flex flex-col gap-6">
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-[1.1fr_1.5fr] lg:gap-20 items-center">
+          
+          {/* Left Column: Image with premium floating framing */}
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
+            className="relative flex justify-center lg:justify-end"
+          >
+            {/* Elegant double-border frame background */}
+            <div className="absolute -bottom-4 -left-4 -right-4 -top-4 rounded-[24px] border border-black/[0.04] bg-black/[0.01] pointer-events-none" />
+            <div className="absolute -bottom-2 -left-2 -right-2 -top-2 rounded-[22px] border border-black/[0.06] bg-black/[0.01] pointer-events-none" />
+            
+            <div className="relative overflow-hidden rounded-[20px] bg-white p-3 shadow-[0_20px_50px_rgba(0,0,0,0.06)] w-full max-w-[440px] aspect-[4/5]">
+              <div className="relative w-full h-full overflow-hidden rounded-[14px] bg-[#fdfaf9]">
+                <Image
+                  src="https://framerusercontent.com/images/cphnFeLljI5C2dQ9FCpjg8HU.png"
+                  alt="Dr. Falguni Ambare"
+                  fill
+                  className="object-cover object-top transition-transform duration-700 ease-out hover:scale-105"
+                  sizes="(min-width: 1024px) 35vw, 100vw"
+                  priority
+                />
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Right Column: Founder details and story */}
+          <div className="flex flex-col gap-6 lg:gap-8">
+            <div className="flex flex-col gap-4">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.6 }}
+                className="inline-flex items-center gap-2 self-start rounded-full border border-black/10 bg-white px-5 py-2 shadow-sm"
+              >
+                <span className="text-accent font-bold">//</span>
+                <span className="text-xs font-bold tracking-widest uppercase text-surface">
+                  Meet The Founder
+                </span>
+              </motion.div>
+
+              <motion.h2
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className="text-[28px] leading-[1.2] font-semibold tracking-tight text-surface sm:text-[34px] lg:text-[40px]"
+              >
+                Dr. Falguni Ambare
+              </motion.h2>
+              
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.6, delay: 0.15 }}
+                className="bg-linear-to-r from-brand-start to-brand-end bg-clip-text text-transparent font-semibold text-base sm:text-lg tracking-tight -mt-2"
+              >
+                Physiotherapist and Founder of Reactive
+              </motion.p>
+            </div>
+
+            {/* Biography text */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.6 }}
-              className="inline-flex items-center gap-2 self-start rounded-full border border-black/10 bg-white px-5 py-2"
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="flex flex-col gap-4 text-surface/70 text-xs sm:text-sm md:text-base leading-relaxed max-w-2xl font-medium"
             >
-              <span className="text-brand font-bold">//</span>
-              <span className="text-sm font-semibold tracking-wide text-surface">
-                Meet The Team
-              </span>
+              <p>
+                Reactive was created with a vision to deliver expert, science-driven care with a personalised touch. My practice focuses on restoring functional movement, enhancing strength, and providing long-term solutions for pain and recovery.
+              </p>
+              <p>
+                Every treatment plan is thoughtfully designed to meet the unique needs of each individual. I am committed to offering a refined, results-oriented physiotherapy experience that supports you in moving, healing, and living better.
+              </p>
             </motion.div>
 
-            <motion.h2
+            {/* Philosophy quote board */}
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.6, delay: 0.15 }}
-              className="text-[40px] leading-[1.1] font-bold tracking-tight text-surface sm:text-[48px]"
+              transition={{ duration: 0.6, delay: 0.25 }}
+              className="relative pl-6 py-2 border-l-2 border-accent italic text-surface/80 text-sm sm:text-base md:text-lg max-w-xl font-medium bg-black/[0.01] pr-4 rounded-r-lg"
             >
-              Meet with our
-              <br />
-              happy avengers
-            </motion.h2>
-          </div>
+              "Your movement is your freedom. Healing is not just about relieving pain—it is about reclaiming your active life."
+            </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-          >
-            <Link
-              href="/team"
-              className="group inline-flex items-center gap-3 rounded-full bg-surface px-7 py-4 text-sm font-semibold text-white transition-all duration-300 hover:bg-brand"
-            >
-              <span className="text-brand group-hover:text-white">//</span>
-              <span>More Team</span>
-              <span className="text-brand group-hover:text-white">//</span>
-            </Link>
-          </motion.div>
-        </div>
-
-        {/* Team Cards Grid */}
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {teamMembers.map((member, idx) => (
+            {/* Socials & Contact Button */}
             <motion.div
-              key={member.id}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.6, delay: 0.1 * idx }}
-              className="group overflow-hidden rounded-[10px] bg-[#f2f2f2]"
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="flex flex-wrap items-center gap-6 pt-4 border-t border-black/[0.06] max-w-2xl"
             >
-              {/* Image */}
-              <Link href={`/team/${member.slug}`} className="block">
-                <div
-                  className="relative w-full overflow-hidden rounded-[10px]"
-                  style={{ aspectRatio: "604/660" }}
-                >
-                  <Image
-                    src={member.image}
-                    alt={member.name}
-                    fill
-                    className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
-                    sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
-                  />
-                </div>
+              <Link
+                href="/contact"
+                className="group inline-flex items-center gap-3 rounded-full bg-surface px-8 py-4 text-sm font-semibold text-white transition-all duration-300 hover:bg-linear-to-r hover:from-brand-start hover:to-brand-end hover:shadow-[0_8px_24px_rgba(25,79,162,0.25)] hover:scale-[1.02]"
+              >
+                <span className="text-accent group-hover:text-white transition-colors">//</span>
+                <span>Get in Touch</span>
+                <span className="text-accent group-hover:text-white transition-colors">//</span>
               </Link>
 
-              {/* Card Content */}
-              <div className="rounded-b-[10px] bg-[#f2f2f2] pt-4">
-                {/* Name */}
-                <Link
-                  href={`/team/${member.slug}`}
-                  className="block border-b border-black/10 pb-4"
-                >
-                  <h5 className="text-xl font-bold text-surface transition-colors hover:text-brand">
-                    {member.name}
-                  </h5>
-                </Link>
-
-                {/* Designation & Social */}
-                <div className="flex items-center justify-between pt-4">
-                  <div className="flex items-center gap-1.5">
-                    <span className="text-brand font-bold text-sm">//</span>
-                    <span className="text-surface/60 text-sm font-medium">
-                      {member.designation}
-                    </span>
-                  </div>
-
-                  {/* Social Links */}
-                  <div className="flex items-center gap-2">
-                    <a
-                      href={member.socials.facebook}
-                      target="_blank"
-                      rel="noopener"
-                      className="flex h-8 w-8 items-center justify-center rounded bg-white shadow-sm transition-shadow hover:shadow-md"
-                    >
-                      <svg
-                        width="10"
-                        height="16"
-                        viewBox="0 0 10 16"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M9 1H7C5.067 1 3.5 2.567 3.5 4.5V7H1V10H3.5V15H6.5V10H8.5L9 7H6.5V4.5C6.5 4.22386 6.72386 4 7 4H9V1Z"
-                          fill="#232323"
-                        />
+              {/* Social icons */}
+              <div className="flex items-center gap-2">
+                {[
+                  {
+                    name: "LinkedIn",
+                    href: "#",
+                    icon: (
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
                       </svg>
-                    </a>
-                    <a
-                      href={member.socials.twitter}
-                      target="_blank"
-                      rel="noopener"
-                      className="flex h-8 w-8 items-center justify-center rounded bg-white shadow-sm transition-shadow hover:shadow-md"
-                    >
-                      <svg
-                        width="16"
-                        height="14"
-                        viewBox="0 0 16 14"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M14.9469 0.978637L9.11756 7.95178L16 13.9786H11.4615L7.45628 8.86378L2.73988 13.9786H0.608421L6.91017 6.24511L0.338281 0.978637H4.97628L8.67044 5.69003L13.0769 0.978637H14.9469Z"
-                          fill="#232323"
-                        />
+                    )
+                  },
+                  {
+                    name: "Instagram",
+                    href: "#",
+                    icon: (
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
                       </svg>
-                    </a>
-                    <a
-                      href={member.socials.linkedin}
-                      target="_blank"
-                      rel="noopener"
-                      className="flex h-8 w-8 items-center justify-center rounded bg-white shadow-sm transition-shadow hover:shadow-md"
-                    >
-                      <svg
-                        width="14"
-                        height="15"
-                        viewBox="0 0 14 15"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M3.12566 14H0.460547V4.64844H3.12566V14ZM1.79174 3.37109C0.964844 3.37109 0.296875 2.68945 0.296875 1.86255V1.85156C0.296875 1.01367 0.964844 0.332031 1.79174 0.332031C2.61865 0.332031 3.28662 1.01367 3.28662 1.85156V1.86255C3.28662 2.68945 2.61865 3.37109 1.79174 3.37109ZM13.7031 14H11.0479V9.44824C11.0479 8.37402 11.0283 7.00391 9.56934 7.00391C8.08984 7.00391 7.86426 8.16699 7.86426 9.36816V14H5.20898V4.64844H7.75879V5.92578H7.79785C8.15137 5.24414 9.01807 4.52246 10.3228 4.52246C13.0195 4.52246 13.7031 6.28223 13.7031 8.60059V14Z"
-                          fill="#232323"
-                        />
-                      </svg>
-                    </a>
-                  </div>
-                </div>
+                    )
+                  }
+                ].map((s) => (
+                  <a
+                    key={s.name}
+                    href={s.href}
+                    aria-label={s.name}
+                    className="flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-sm border border-black/[0.05] text-surface/60 transition-all hover:text-brand-start hover:border-brand-start/40 hover:shadow-md"
+                  >
+                    {s.icon}
+                  </a>
+                ))}
               </div>
             </motion.div>
-          ))}
+          </div>
+
         </div>
       </div>
     </section>

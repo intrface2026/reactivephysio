@@ -11,74 +11,88 @@ const servicesData: Record<string, {
   conditions: string[];
   process: { step: string; title: string; desc: string }[];
 }> = {
-  "gait-training": {
-    title: "Gait Training",
-    tagline: "Restore your natural movement",
-    description: "Gait training focuses on improving the way you walk. Whether recovering from a neurological event like a stroke, a lower limb injury, or dealing with a degenerative condition, our gait specialists use advanced analysis and progressive exercises to restore natural movement patterns.",
-    image: "https://framerusercontent.com/images/x9BbpMW2l1ETXjm885q6jCtWRYc.jpg",
-    benefits: ["Improved walking efficiency and speed", "Reduced pain during movement", "Better balance and fall prevention", "Increased confidence in mobility", "Long-term independence"],
-    conditions: ["Post-stroke rehabilitation", "Parkinson's disease", "Knee and hip replacement recovery", "Foot drop", "Musculoskeletal injuries"],
+  "physiotherapy-pain-relief": {
+    title: "Science-based Physiotherapy & Pain Relief",
+    tagline: "Evidence-backed care to target pain and restore natural movement",
+    description: "Our Science-based Physiotherapy & Pain Relief program is dedicated to treating both acute and chronic pain. By combining joint mobilisation, advanced modalities, and tailored movement training, we target the root cause of your pain rather than just masking the symptoms. Every plan is carefully designed around current scientific evidence to help you heal faster and safer.",
+    image: "https://framerusercontent.com/images/3ReT5xeX5z4tvOwGXq4uK0APU4.jpg",
+    benefits: ["Effective, long-term pain relief without heavy medication", "Improved joint flexibility and range of motion", "Reduced muscular tension and muscle spasms", "Better understanding of pain mechanics", "Restored confidence in daily physical activities"],
+    conditions: ["Chronic lower back and neck pain", "Osteoarthritis and joint stiffness", "Tendonitis and bursitis", "Sciatica and nerve pain", "Fibromyalgia and myofascial pain"],
     process: [
-      { step: "01", title: "Gait Analysis", desc: "We perform a detailed video and clinical analysis of your walking pattern." },
-      { step: "02", title: "Targeted Exercises", desc: "A programme of progressive strength and mobility exercises is designed for your needs." },
-      { step: "03", title: "Assisted Practice", desc: "Guided practice sessions with real-time feedback to correct movement patterns." },
-      { step: "04", title: "Independence Training", desc: "Progressing to unsupported walking and community ambulation." },
+      { step: "01", title: "Assessment", desc: "Thorough biomechanical and pain pattern evaluation of your body." },
+      { step: "02", title: "Pain Modulation", desc: "Evidence-based techniques to reduce acute distress and tissue irritation." },
+      { step: "03", title: "Restoring Function", desc: "Gentle corrective exercises to rebuild safe, functional movement." },
+      { step: "04", title: "Active Maintenance", desc: "Self-care and targeted strengthening strategies to prevent future pain recurrence." },
+    ],
+  },
+  "personalised-rehab-post-rehabilitation": {
+    title: "Personalised Rehab & Post-Rehabilitation",
+    tagline: "Step-by-step restoration of strength and daily movement",
+    description: "Our Personalised Rehab & Post-Rehabilitation service supports your transition from acute medical care or surgery back to full physical capacity. We design highly individualized recovery programs that respect surgical protocols, rebuild structural tissue capacity, and empower you to move with strength and safety.",
+    image: "https://framerusercontent.com/images/x9BbpMW2l1ETXjm885q6jCtWRYc.jpg",
+    benefits: ["Safe, structured return to regular activities", "Restored muscle volume and strength after disuse", "Minimized joint stiffness and post-surgical swelling", "Reduced risk of secondary injuries", "Optimized healing times based on evidence-backed protocols"],
+    conditions: ["Post-surgical recovery (Knee/Hip replacements)", "ACL, meniscus, or rotator cuff repairs", "Fracture and trauma rehabilitation", "Spinal surgery recovery", "Neurological event recovery (e.g. Stroke, Parkinson's)"],
+    process: [
+      { step: "01", title: "Initial Evaluation", desc: "Detailed review of medical history and movement constraints." },
+      { step: "02", title: "Phase 1: Protection", desc: "Managing inflammation, maintaining joint health, and restoring early range of motion." },
+      { step: "03", title: "Phase 2: Loading", desc: "Progressive resistance exercises to rebuild structural tissue and muscle strength." },
+      { step: "04", title: "Phase 3: Function", desc: "Sport or activity-specific functional movement training for full return to daily life." },
+    ],
+  },
+  "strength-fitness-training": {
+    title: "Strength & Fitness Training",
+    tagline: "Science-driven athletic conditioning for premium longevity",
+    description: "Our Strength & Fitness Training is a professional, science-guided program tailored to help you build physical capacity, improve cardiovascular fitness, and optimize body composition. Whether you want to lift heavier, run longer, or simply feel more energetic throughout the day, we deliver systematic training straight to your doorstep.",
+    image: "https://framerusercontent.com/images/fd7H4g2SyDOLmrGUUi05FNqLbw.jpg",
+    benefits: ["Enhanced skeletal muscle strength and endurance", "Increased bone density and joint stability", "Boosted cardiovascular health and stamina", "Better posture, coordination, and athletic mechanics", "Long-term metabolic health and energy elevation"],
+    conditions: ["Muscle weakness and sarcopenia", "Low physical stamina and cardiovascular fitness", "Weight management and body composition issues", "Preventative conditioning for aging adults", "Athletic performance enhancement"],
+    process: [
+      { step: "01", title: "Fitness Profiling", desc: "Testing baseline strength, endurance, flexibility, and motion patterns." },
+      { step: "02", title: "Tailored Program", desc: "A customized conditioning plan aligned with your goals and lifestyle." },
+      { step: "03", title: "Progressive Overload", desc: "Systematically challenging your physical limits in a safe and structured manner." },
+      { step: "04", title: "Biometric Tracking", desc: "Regular assessments to monitor and celebrate your strength and cardiovascular gains." },
+    ],
+  },
+  "posture-correction": {
+    title: "Posture Correction",
+    tagline: "Align your body, relieve your strain",
+    description: "Our Posture Correction program is designed to reverse the effects of modern desk-bound environments and repetitive postural strains. We focus on identifying muscular imbalances, releasing chronically tight structures, strengthening key alignment muscles, and providing ergonomics education for everyday life.",
+    image: "https://framerusercontent.com/images/WYxFJy7m3eXg59BXG2MbDNE4M.jpg",
+    benefits: ["Relief from chronic neck, shoulder, and lower back strain", "Optimized spinal alignment and load distribution", "Improved respiratory capacity and chest expansion", "Greater visual presence and structural confidence", "Sustainable habits to prevent workplace fatigue"],
+    conditions: ["Forward head posture and tech neck", "Hyperkyphosis and rounded shoulders", "Scoliotic posture adaptations", "Repetitive strain injuries (RSI)", "Desk job related chronic tightness"],
+    process: [
+      { step: "01", title: "Posture Mapping", desc: "Digital and clinical assessment of static and dynamic alignment." },
+      { step: "02", title: "Myofascial Release", desc: "Releasing overactive, tight muscles causing structural pull." },
+      { step: "03", title: "Core Activation", desc: "Targeting deep stabilizers of the spine and scapular controllers." },
+      { step: "04", title: "Ergonomic Habits", desc: "Setting up your home/work workspace and dynamic posture cues." },
     ],
   },
   "sports-rehabilitation": {
-    title: "Sports Rehabilitation",
-    tagline: "Back to the sport you love",
-    description: "Our sports rehabilitation programme is designed for athletes at all levels. From ACL reconstructions to rotator cuff repairs, our certified sports physiotherapists develop individualised, phase-based programmes to ensure a safe, efficient return to peak performance.",
+    title: "Sports Rehab",
+    tagline: "Back to the sport you love, stronger than before",
+    description: "Our Sports Rehab service is built for athletes of all disciplines—from recreational weekend runners to competitive competitors. We focus on sport-specific rehabilitation, restoring agility, correcting biomechanical flaws that caused the injury, and implementing advanced conditioning to prevent re-injury on return.",
     image: "https://framerusercontent.com/images/4NjxubX1dvlVTQPtjdeJOn62UU.jpg",
-    benefits: ["Safe, phased return to sport", "Improved athletic performance", "Reduced re-injury risk", "Sport-specific conditioning", "Psychological readiness support"],
-    conditions: ["ACL and PCL injuries", "Shoulder dislocations and instability", "Hamstring and quad tears", "Ankle sprains", "Rotator cuff injuries"],
+    benefits: ["Safe, evidence-guided return to competitive sport", "Correction of underlying biomechanical imbalances", "Improved agility, explosive strength, and coordination", "Restored psychological confidence in your injured limb", "Reduced overall risk of future athletic injury"],
+    conditions: ["Ligament sprains (ACL, PCL, MCL, ankle sprains)", "Muscle strains (Hamstrings, quads, calves)", "Rotator cuff and shoulder instability", "Tennis/Golfer's elbow and patellar tendonitis", "Overuse and running injuries"],
     process: [
-      { step: "01", title: "Injury Assessment", desc: "Comprehensive physical and functional testing to understand your injury." },
-      { step: "02", title: "Phase 1: Protection", desc: "Pain management, swelling control, and early range of motion work." },
-      { step: "03", title: "Phase 2: Strengthening", desc: "Progressive loading and neuromuscular retraining." },
-      { step: "04", title: "Return to Sport", desc: "Sport-specific drills and performance testing before full clearance." },
+      { step: "01", title: "Biomechanical Audit", desc: "Detailed testing of joint angles, motion ranges, and muscle performance." },
+      { step: "02", title: "Active Recovery", desc: "Managing pain while keeping uninjured areas fully active." },
+      { step: "03", title: "Power & Agility", desc: "Challenging dynamic balance, progressive loading, and deceleration." },
+      { step: "04", title: "Return to Play", desc: "Sport-specific drills, high-velocity testing, and full clearance." },
     ],
   },
-  "womens-therapy": {
-    title: "Women's Therapy",
-    tagline: "Specialist care throughout every stage of life",
-    description: "Women's health physiotherapy addresses the unique physical challenges women face throughout their lives — from pregnancy and postnatal recovery to menopause and pelvic floor dysfunction. Our specialist team provides confidential, evidence-based care in a safe and supportive environment.",
+  "anc-pnc-care": {
+    title: "ANC – PNC Care (Antenatal & Postnatal Care)",
+    tagline: "Specialist physiotherapy through the journey of motherhood",
+    description: "Our ANC – PNC Care program offers specialized, compassionate physical support for women during pregnancy and postpartum. We focus on relieving pregnancy-related pain, preparing your pelvic floor for delivery, safely managing diastasis recti, and rebuilding abdominal and pelvic strength so you can enjoy motherhood pain-free.",
     image: "https://framerusercontent.com/images/EuE334zfvtYBi9vwSBstq2xqJY.jpg",
-    benefits: ["Pelvic floor strength and function", "Reduced incontinence symptoms", "Improved postnatal recovery", "Pain-free pregnancy and postpartum", "Menopausal symptom management"],
-    conditions: ["Stress and urge incontinence", "Pelvic organ prolapse", "Diastasis recti", "Prenatal back and pelvic pain", "Vaginismus and dyspareunia"],
+    benefits: ["Relief from pregnancy-related pelvic and back pain", "Preparation and strengthening of pelvic floor muscles", "Safe management and closure of diastasis recti", "Restored core support and spinal stability postpartum", "Safe transition back to active exercise and fitness"],
+    conditions: ["Symphysis pubis dysfunction (SPD) / pelvic girdle pain", "Prenatal and postnatal lower back pain", "Diastasis recti (abdominal separation)", "Pelvic floor weakness and stress incontinence", "Post-caesarean or vaginal birth scar recovery"],
     process: [
-      { step: "01", title: "Confidential Assessment", desc: "A thorough, respectful internal and external pelvic assessment." },
-      { step: "02", title: "Education", desc: "Understanding your condition, bladder and bowel habits, and lifestyle factors." },
-      { step: "03", title: "Pelvic Floor Training", desc: "Individualised programme of pelvic floor rehabilitation exercises." },
-      { step: "04", title: "Functional Return", desc: "Progressive return to daily activities, sport, and intimacy." },
-    ],
-  },
-  "manual-therapy": {
-    title: "Manual Therapy",
-    tagline: "Healing through expert hands",
-    description: "Manual therapy uses skilled, hands-on techniques to treat musculoskeletal pain and dysfunction. Our certified manual therapists apply joint mobilisation, manipulation, soft tissue massage, and myofascial release to reduce pain, improve flexibility, and restore normal movement.",
-    image: "https://framerusercontent.com/images/fd7H4g2SyDOLmrGUUi05FNqLbw.jpg",
-    benefits: ["Immediate pain relief", "Improved joint range of motion", "Reduced muscle tension and spasm", "Enhanced circulation", "Faster overall recovery"],
-    conditions: ["Neck and back pain", "Shoulder stiffness", "Hip and knee restrictions", "Headaches and TMJ disorders", "Postural dysfunction"],
-    process: [
-      { step: "01", title: "Assessment", desc: "Identifying joint restrictions, soft tissue tightness, and movement impairments." },
-      { step: "02", title: "Joint Mobilisation", desc: "Graduated techniques to restore joint mechanics and reduce pain." },
-      { step: "03", title: "Soft Tissue Work", desc: "Massage, trigger point therapy, and myofascial techniques." },
-      { step: "04", title: "Exercise Integration", desc: "Combining manual therapy with targeted exercise for lasting results." },
-    ],
-  },
-  "pain-management": {
-    title: "Pain Management",
-    tagline: "Drug-free solutions for lasting relief",
-    description: "Chronic pain affects every aspect of life. Our physiotherapy-led pain management programme combines modern pain neuroscience education, targeted exercise, manual therapy, and lifestyle coaching to help patients regain control and live actively despite their pain.",
-    image: "https://framerusercontent.com/images/3ReT5xeX5z4tvOwGXq4uK0APU4.jpg",
-    benefits: ["Reduced pain intensity and frequency", "Improved sleep and energy", "Less reliance on medication", "Better understanding of your pain", "Restored confidence in movement"],
-    conditions: ["Chronic lower back pain", "Fibromyalgia", "Complex regional pain syndrome", "Persistent headaches", "Central sensitisation"],
-    process: [
-      { step: "01", title: "Pain Education", desc: "Understanding pain neuroscience and how the brain processes pain signals." },
-      { step: "02", title: "Graded Exposure", desc: "Progressively challenging movements to reduce pain-related fear." },
-      { step: "03", title: "Active Management", desc: "Exercise therapy, breathing techniques, and relaxation strategies." },
-      { step: "04", title: "Self-Management", desc: "Tools and strategies to independently manage pain long-term." },
+      { step: "01", title: "Safe Assessment", desc: "Gentle, mother-centered physical, alignment, and abdominal check." },
+      { step: "02", title: "Core & Pelvic Training", desc: "Targeted, safe prenatal or postpartum exercises for stability." },
+      { step: "03", title: "Pain Modulation", desc: "Therapeutic massage and alignment tips for maternal comfort." },
+      { step: "04", title: "Functional Rebuilding", desc: "Safe progressive load training to support daily baby care." },
     ],
   },
 };
@@ -88,9 +102,9 @@ type Params = { slug: string };
 export async function generateMetadata({ params }: { params: Promise<Params> }): Promise<Metadata> {
   const { slug } = await params;
   const service = servicesData[slug];
-  if (!service) return { title: "Service – Phisio" };
+  if (!service) return { title: "Service – Reactive" };
   return {
-    title: `${service.title} – Phisio | ${service.tagline}`,
+    title: `${service.title} – Reactive | ${service.tagline}`,
     description: service.description.substring(0, 160),
   };
 }
@@ -151,7 +165,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<Pa
             <p className="text-surface/60 leading-relaxed text-lg">{service.description}</p>
             <Link
               href="/contact"
-              className="mt-10 inline-flex items-center gap-2 rounded-full bg-brand px-8 py-4 text-sm font-semibold text-white transition-all hover:shadow-[0_8px_24px_rgba(197,110,94,0.5)]"
+              className="mt-10 inline-flex items-center gap-2 rounded-full bg-brand px-8 py-4 text-sm font-semibold text-white transition-all hover:shadow-[0_8px_24px_rgba(0,167,216,0.5)]"
             >
               Book This Service
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

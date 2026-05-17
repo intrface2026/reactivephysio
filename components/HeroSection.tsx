@@ -2,10 +2,11 @@
 
 import React, { useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { AnimatedButton } from "./AnimatedButton";
 
-const headingText = "Regain strength, restore mobility, live pain-free.";
+const headingText = "Move better, feel stronger, live confidently.";
 const words = headingText.split(" ");
 
 /* ─── Card data ─────────────────────────────────────────────── */
@@ -79,14 +80,14 @@ function HappyUsersCard({
   shapeSrc: string;
 }) {
   return (
-    <div className="group relative flex h-full flex-col items-start justify-center overflow-hidden rounded-[22px] bg-brand p-5 sm:p-9 text-white shadow-xl ring-1 ring-white/20">
+    <div className="group relative flex h-full flex-col items-start justify-center overflow-hidden rounded-[22px] bg-linear-to-br from-brand-start to-brand-end p-5 sm:p-9 text-white shadow-xl ring-1 ring-white/20">
       {/* Background decorative shape */}
       <div className="absolute right-[-10px] top-1/2 h-36 w-36 -translate-y-1/2 opacity-25 transition-transform duration-1000 group-hover:rotate-12 group-hover:scale-110 sm:h-40 sm:w-40">
         <Image src={shapeSrc} alt="Shape" fill className="object-contain" />
       </div>
       {/* Shimmer sweep */}
       <div className="pointer-events-none absolute inset-0 -translate-x-full skew-x-[-20deg] bg-white/10 transition-transform duration-1000 ease-in-out group-hover:translate-x-[200%]" />
-      <h3 className="relative z-10 mb-1 text-[36px] font-bold leading-none tracking-tight sm:mb-2 sm:text-[56px] lg:text-[68px]">
+      <h3 className="relative z-10 mb-1 text-[32px] font-bold leading-none tracking-tight sm:mb-2 sm:text-[44px] lg:text-[52px]">
         {value}
       </h3>
       <p className="relative z-10 text-[10px] font-semibold uppercase tracking-wider text-white/90 sm:text-base">
@@ -108,7 +109,7 @@ function RatingsCard({
   return (
     <div className="group flex h-full flex-col justify-center rounded-[22px] bg-surface p-5 sm:p-6 shadow-2xl ring-1 ring-white/15 text-white">
       <div className="mb-4 flex items-center gap-2 sm:mb-5 sm:gap-4">
-        <h2 className="text-[32px] font-bold leading-none sm:text-[44px]">
+        <h2 className="text-[28px] font-bold leading-none sm:text-[36px]">
           {rating}
         </h2>
         <div className="flex flex-col gap-1 sm:gap-1.5">
@@ -117,7 +118,7 @@ function RatingsCard({
               <svg
                 key={i}
                 viewBox="0 0 24 24"
-                fill="#c56e5e"
+                fill="var(--color-accent)"
                 className="h-3 w-3 transition-transform duration-300 group-hover:scale-110 sm:h-4.5 sm:w-4.5"
               >
                 <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
@@ -281,80 +282,77 @@ function DesktopMasonryGrid() {
 /* ─── Main export ────────────────────────────────────────────── */
 export function HeroSection() {
   return (
-    <section className="relative w-full overflow-hidden pt-[108px] pb-16 sm:pt-[116px] sm:pb-20 md:pt-[120px] md:pb-32">
-      <div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-between gap-10 px-6 md:flex-row md:items-start md:gap-8 md:px-10 lg:gap-12">
-        {/* Left Content */}
-        <div className="flex w-full flex-col items-center text-center md:w-[48%] md:items-start md:text-left md:pt-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            className="mb-7 flex items-center justify-center gap-2 rounded-full border border-black/10 px-5 py-2 md:justify-start"
-          >
-            <span className="text-brand font-bold">//</span>
-            <span className="text-sm font-semibold tracking-wide text-surface">
-              Serve Quality Physiotherapy
-            </span>
-          </motion.div>
+    <section className="relative w-full overflow-hidden pt-[140px] pb-16 sm:pt-[160px] sm:pb-20 md:pt-[180px] md:pb-32">
+      <div className="mx-auto flex w-full max-w-4xl flex-col items-center justify-center gap-8 px-6 text-center md:gap-10 md:px-10">
+        {/* Top Pill */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="inline-flex items-center justify-center gap-2 rounded-full border border-black/10 bg-white px-5 py-2 shadow-sm"
+        >
+          <span className="text-accent font-bold">{"//"}</span>
+          <span className="text-sm font-semibold tracking-wide text-surface">
+            Serve Quality Physiotherapy
+          </span>
+        </motion.div>
 
-          <h1 className="mb-6 max-w-2xl text-[40px] leading-[1.1] font-bold tracking-tight text-surface sm:text-[52px] lg:text-[68px]">
-            {words.map((word, idx) => (
-              <motion.span
-                key={idx}
-                initial={{ opacity: 0, y: 20, filter: "blur(4px)" }}
-                animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                transition={{
-                  duration: 0.6,
-                  ease: "easeOut",
-                  delay: idx * 0.08,
-                }}
-                className="inline-block"
-              >
-                {word === "strength," ? (
-                  <span className="text-brand">{word}</span>
-                ) : (
-                  word
-                )}
-                {idx !== words.length - 1 && "\u00A0"}
-              </motion.span>
-            ))}
-          </h1>
+        {/* Heading */}
+        <h1 className="text-[32px] sm:text-[46px] md:text-[54px] lg:text-[62px] leading-[1.1] font-medium tracking-tight text-surface">
+          {words.map((word, idx) => (
+            <motion.span
+              key={idx}
+              initial={{ opacity: 0, y: 20, filter: "blur(4px)" }}
+              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              transition={{
+                duration: 0.6,
+                ease: "easeOut",
+                delay: idx * 0.08,
+              }}
+              className="inline-block"
+            >
+              {word === "stronger," ? (
+                <span className="text-brand font-semibold">{word}</span>
+              ) : (
+                word
+              )}
+              {idx !== words.length - 1 && "\u00A0"}
+            </motion.span>
+          ))}
+        </h1>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut", delay: 0.5 }}
-            className="mb-9 max-w-lg text-base sm:text-lg text-black/60 md:text-xl leading-relaxed"
-          >
-            Professional physiotherapy treatments tailored to your recovery
-            needs. What are you waiting for?
-          </motion.p>
+        {/* Paragraph */}
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut", delay: 0.5 }}
+          className="max-w-2xl text-sm sm:text-base md:text-lg text-black/60 leading-relaxed"
+        >
+          Quality physiotherapy can happen right at home. Reactive is a premium home-based physiotherapy and movement studio in Nagpur delivering expert, science-driven care straight to your doorstep.
+        </motion.p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut", delay: 0.6 }}
-          >
-            <AnimatedButton
-              href="/contact"
-              text="// Book Appointment"
-              className="bg-brand hover:bg-brand/90 text-white"
-              iconSrc=""
-            />
-          </motion.div>
+        {/* Button */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut", delay: 0.6 }}
+        >
+          <AnimatedButton
+            href="/contact"
+            text="// Book a Session"
+            className="bg-linear-to-r from-brand-start to-brand-end text-white px-8 py-3.5 sm:px-10 sm:py-4 rounded-full text-sm sm:text-base font-semibold shadow-md transition-all hover:shadow-[0_8px_24px_rgba(25,79,162,0.2)] hover:scale-[1.02]"
+            iconSrc=""
+          />
+        </motion.div>
+      </div>
+
+      {/* Hero Images Below Text */}
+      <div className="mx-auto mt-16 max-w-7xl px-6 md:px-10 lg:mt-24">
+        <div className="md:hidden">
+          <MobileBentoGrid />
         </div>
-
-        {/* Right Content */}
-        <div className="w-full md:w-[49%]">
-          {/* Mobile view: static 2x2 grid */}
-          <div className="md:hidden">
-            <MobileBentoGrid />
-          </div>
-          
-          {/* Laptop/Desktop view: old staggered masonry */}
-          <div className="hidden md:block">
-            <DesktopMasonryGrid />
-          </div>
+        <div className="hidden md:block">
+          <DesktopMasonryGrid />
         </div>
       </div>
     </section>

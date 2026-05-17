@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy – Phisio",
-  description: "Read Phisio's privacy policy to understand how we collect, use, and protect your personal information.",
+  title: "Privacy Policy – Reactive",
+  description: "Read Reactive's privacy policy to understand how we collect, use, and protect your personal information.",
 };
 
 export default function PrivacyPage() {
@@ -25,7 +25,7 @@ export default function PrivacyPage() {
           {[
             {
               title: "1. Who We Are",
-              body: `Phisio ("we", "our", "us") is a physiotherapy and rehabilitation clinic. Our registered address is 123 Healing Way, Suite 100, San Francisco, CA 94105. We are the data controller for personal information collected through this website and in the course of providing our services.`,
+              body: `Reactive ("we", "our", "us") is a premium home-based physiotherapy service. We operate across Nagpur, Maharashtra, India. We are the data controller for personal information collected through this website and in the course of providing our customized clinical services.`,
             },
             {
               title: "2. Information We Collect",
@@ -41,19 +41,19 @@ export default function PrivacyPage() {
             },
             {
               title: "5. Data Retention",
-              body: `We retain patient records for a minimum of 7 years in accordance with healthcare regulations. Non-clinical data is retained for 3 years. You may request deletion of your non-clinical data at any time by contacting us.`,
+              body: `We retain patient records in accordance with healthcare regulations. Non-clinical data is retained for 3 years. You may request deletion of your non-clinical data at any time by contacting us.`,
             },
             {
               title: "6. Your Rights",
-              body: `You have the right to access, correct, or delete your personal data, restrict processing, and data portability. To exercise these rights, please email us at hello@phisio.com.`,
+              body: `You have the right to access, correct, or delete your personal data, restrict processing, and data portability. To exercise these rights, please email us at hello@reactivept.in.`,
             },
             {
               title: "7. Cookies",
-              body: `We use essential cookies to ensure the website functions correctly. We also use analytics cookies (Google Analytics) to understand how visitors use our site. You can manage cookie preferences through your browser settings.`,
+              body: `We use essential cookies to ensure the website functions correctly. We also use analytics cookies to understand how visitors use our site. You can manage cookie preferences through your browser settings.`,
             },
             {
               title: "8. Contact",
-              body: `For any privacy-related queries, please contact our Data Protection Officer at hello@phisio.com or write to us at our registered address.`,
+              body: `For any privacy-related queries, please contact us at hello@reactivept.in.`,
             },
           ].map((section) => (
             <div key={section.title} className="mb-10">

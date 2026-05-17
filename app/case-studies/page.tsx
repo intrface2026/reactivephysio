@@ -3,9 +3,9 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Case Studies – Phisio | Real Patient Recovery Stories",
+  title: "Case Studies – Reactive | Real Patient Recovery Stories",
   description:
-    "Explore real recovery stories from Phisio patients — from elite athletes to everyday people reclaiming their movement and quality of life.",
+    "Explore real recovery stories from Reactive patients — from elite athletes to everyday people reclaiming their movement and quality of life.",
 };
 
 const caseStudies = [
@@ -198,7 +198,7 @@ export default function CaseStudiesPage() {
         <div className="mx-auto max-w-4xl text-center">
           <p className="text-brand text-[80px] leading-none font-serif mb-4">&ldquo;</p>
           <blockquote className="text-[24px] font-bold leading-relaxed text-surface sm:text-[32px]">
-            I walked in barely able to move. Six weeks later I ran my first 5K — the Phisio team gave me my life back.
+            I walked in barely able to move. Six weeks later I ran my first 5K — Reactive gave me my life back.
           </blockquote>
           <div className="mt-8 flex items-center justify-center gap-4">
             <div className="relative h-12 w-12 overflow-hidden rounded-full">
@@ -226,7 +226,7 @@ export default function CaseStudiesPage() {
           </div>
           <Link
             href="/contact"
-            className="shrink-0 inline-flex items-center gap-2 rounded-full bg-brand px-8 py-4 text-sm font-semibold text-white transition-all hover:shadow-[0_8px_24px_rgba(197,110,94,0.5)]"
+            className="shrink-0 inline-flex items-center gap-2 rounded-full bg-brand px-8 py-4 text-sm font-semibold text-white transition-all hover:shadow-[0_8px_24px_rgba(0,167,216,0.5)]"
           >
             Book An Assessment
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

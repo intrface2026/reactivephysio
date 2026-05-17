@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Terms of Service – Phisio",
-  description: "Review Phisio's terms of service governing use of our website and clinical services.",
+  title: "Terms of Service – Reactive",
+  description: "Review Reactive's terms of service governing use of our website and clinical services.",
 };
 
 export default function TermsPage() {
@@ -25,43 +25,43 @@ export default function TermsPage() {
           {[
             {
               title: "1. Acceptance of Terms",
-              body: `By accessing and using the Phisio website and services, you agree to be bound by these Terms of Service. If you do not agree, please do not use our services.`,
+              body: `By accessing and using the Reactive website and services, you agree to be bound by these Terms of Service. If you do not agree, please do not use our services.`,
             },
             {
               title: "2. Services Provided",
-              body: `Phisio provides professional physiotherapy and rehabilitation services. The information on this website is for general informational purposes only and does not constitute medical advice. Always consult a qualified healthcare professional for medical concerns.`,
+              body: `Reactive provides professional, home-based physiotherapy and rehabilitation services. The information on this website is for general informational purposes only and does not constitute medical advice. Always consult a qualified healthcare professional for medical concerns.`,
             },
             {
               title: "3. Appointments and Cancellations",
-              body: `Appointments must be cancelled or rescheduled with at least 24 hours' notice. Failure to do so may result in a late cancellation fee of 50% of the session cost. No-shows will be charged the full session fee.`,
+              body: `Appointments must be cancelled or rescheduled with at least 24 hours' notice. Failure to do so may result in a late cancellation fee.`,
             },
             {
               title: "4. Payment",
-              body: `Payment is due at the time of service unless a payment plan has been agreed in writing. We accept all major credit and debit cards. Invoices are available on request for insurance purposes.`,
+              body: `Payment is due at the time of service unless otherwise agreed. We accept major payment methods including UPI, bank transfers, credit/debit cards.`,
             },
             {
               title: "5. Clinical Disclaimer",
-              body: `Physiotherapy involves physical contact and exercise. While we take all reasonable precautions, there is an inherent risk associated with physical activity and manual techniques. Our therapists will explain any risks before commencing treatment.`,
+              body: `Physiotherapy involves physical contact and exercise. While we take all reasonable precautions, there is an inherent risk associated with physical activity and manual techniques. Our therapist will explain any risks before commencing treatment.`,
             },
             {
               title: "6. Intellectual Property",
-              body: `All content on this website, including text, images, logos, and design, is the property of Phisio and is protected by copyright law. You may not reproduce or distribute any content without express written permission.`,
+              body: `All content on this website, including text, images, logos, and design, is the property of Reactive and is protected by copyright law. You may not reproduce or distribute any content without express written permission.`,
             },
             {
               title: "7. Limitation of Liability",
-              body: `To the fullest extent permitted by law, Phisio shall not be liable for any indirect, incidental, or consequential damages arising from your use of our website or services, except where caused by our negligence.`,
+              body: `To the fullest extent permitted by law, Reactive shall not be liable for any indirect, incidental, or consequential damages arising from your use of our website or services, except where caused by our negligence.`,
             },
             {
               title: "8. Governing Law",
-              body: `These Terms are governed by the laws of the State of California, USA. Any disputes shall be subject to the exclusive jurisdiction of the courts of San Francisco.`,
+              body: `These Terms are governed by the laws of India. Any disputes shall be subject to the exclusive jurisdiction of the courts of Nagpur, Maharashtra, India.`,
             },
             {
               title: "9. Changes to Terms",
-              body: `We reserve the right to update these Terms at any time. Continued use of our services after changes are posted constitutes acceptance of the updated Terms. We will notify patients of material changes by email.`,
+              body: `We reserve the right to update these Terms at any time. Continued use of our services after changes are posted constitutes acceptance of the updated Terms.`,
             },
             {
               title: "10. Contact",
-              body: `For questions about these Terms, please contact us at hello@phisio.com or call +1 (234) 567-890.`,
+              body: `For questions about these Terms, please contact us at hello@reactivept.in or call +91 98230 12345.`,
             },
           ].map((section) => (
             <div key={section.title} className="mb-10">

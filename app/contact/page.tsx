@@ -3,45 +3,34 @@ import Script from "next/script";
 import ContactForm from "./_components/ContactForm";
 
 export const metadata: Metadata = {
-  title: "Contact Us – Phisio | Book Your Appointment",
+  title: "Contact Us – Reactive | Book Your Home-Based Appointment",
   description:
-    "Get in touch with Phisio to book an appointment, ask a question, or find our clinic location. We are here to help you recover.",
+    "Get in touch with Reactive to book a personalized home-based physiotherapy session in Nagpur. We are here to support your healing and movement.",
 };
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "PhysicalTherapy",
-  name: "Phisio",
-  url: "https://phisio.com",
-  telephone: "+1-234-567-890",
-  email: "hello@phisio.com",
+  name: "Reactive Physical Therapy",
+  url: "https://reactivephysicaltherapy.in",
+  telephone: "+91-98230-12345",
+  email: "hello@reactivept.in",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "123 Healing Way, Suite 100",
-    addressLocality: "San Francisco",
-    addressRegion: "CA",
-    postalCode: "94105",
-    addressCountry: "US",
+    streetAddress: "Home-Based Private Services",
+    addressLocality: "Nagpur",
+    addressRegion: "Maharashtra",
+    postalCode: "440010",
+    addressCountry: "IN",
   },
   openingHoursSpecification: [
     {
       "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
       opens: "08:00",
-      closes: "18:00",
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: "Saturday",
-      opens: "09:00",
-      closes: "14:00",
+      closes: "20:00",
     },
   ],
-  geo: {
-    "@type": "GeoCoordinates",
-    latitude: 37.7749,
-    longitude: -122.4194,
-  },
 };
 
 const contactInfo = [
@@ -52,8 +41,8 @@ const contactInfo = [
         <circle cx="12" cy="10" r="3" />
       </svg>
     ),
-    label: "Our Clinic",
-    value: "123 Healing Way, Suite 100\nSan Francisco, CA 94105",
+    label: "Coverage Area",
+    value: "Home-Based Care Across\nNagpur, Maharashtra, India",
     href: undefined,
   },
   {
@@ -63,8 +52,8 @@ const contactInfo = [
       </svg>
     ),
     label: "Phone",
-    value: "+1 (234) 567-890",
-    href: "tel:+1234567890",
+    value: "+91 98230 12345",
+    href: "tel:+919823012345",
   },
   {
     icon: (
@@ -74,8 +63,8 @@ const contactInfo = [
       </svg>
     ),
     label: "Email",
-    value: "hello@phisio.com",
-    href: "mailto:hello@phisio.com",
+    value: "hello@reactivept.in",
+    href: "mailto:hello@reactivept.in",
   },
   {
     icon: (
@@ -85,7 +74,7 @@ const contactInfo = [
       </svg>
     ),
     label: "Hours",
-    value: "Mon–Fri: 8am – 6pm\nSat: 9am – 2pm",
+    value: "Mon–Sat: 8am – 8pm\nSunday: By Appointment",
     href: undefined,
   },
 ];
@@ -103,15 +92,15 @@ export default function ContactPage() {
         <section className="w-full bg-surface pt-40 pb-24 px-6 md:px-10">
           <div className="mx-auto max-w-7xl">
             <div className="inline-flex items-center gap-2 rounded-full border border-white/20 px-5 py-2 mb-6">
-              <span className="text-brand font-bold">//</span>
+              <span className="text-accent font-bold">//</span>
               <span className="text-sm font-semibold tracking-wide text-white">Contact Us</span>
             </div>
-            <h1 className="max-w-2xl text-[40px] leading-[1.1] font-bold tracking-tight text-white sm:text-[56px]">
+            <h1 className="max-w-2xl text-[32px] sm:text-[44px] lg:text-[52px] leading-[1.2] font-semibold tracking-tight text-white">
               Let&apos;s get you<br />
-              <span className="text-brand">moving again</span>
+              <span className="bg-linear-to-r from-brand-start to-brand-end bg-clip-text text-transparent">moving again</span>
             </h1>
-            <p className="mt-6 max-w-lg text-lg text-white/60 leading-relaxed">
-              Book an appointment, ask a question, or simply reach out — our team is here and ready to help.
+            <p className="mt-6 max-w-lg text-sm sm:text-base text-white/60 leading-relaxed">
+              Book a home consultation, ask a clinical question, or simply reach out — we are here and ready to support your rehabilitation.
             </p>
           </div>
         </section>
@@ -125,26 +114,26 @@ export default function ContactPage() {
             {/* Contact Info */}
             <div className="flex flex-col gap-10">
               <div>
-                <h2 className="text-[32px] font-bold text-surface sm:text-[40px] mb-4">Reach us directly</h2>
-                <p className="text-surface/60 leading-relaxed">
-                  We aim to respond to all enquiries within 24 hours. For urgent matters, please call us directly.
+                <h2 className="text-[24px] sm:text-[30px] font-semibold text-surface mb-3">Reach us directly</h2>
+                <p className="text-xs sm:text-sm text-surface/60 leading-relaxed">
+                  We respond to all clinical enquiries within 24 hours. For booking urgent assessments, please call us directly.
                 </p>
               </div>
 
               <ul className="flex flex-col gap-6">
                 {contactInfo.map((item) => (
                   <li key={item.label} className="flex items-start gap-4">
-                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-brand/10 text-brand">
+                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-brand-start/10 text-brand-start">
                       {item.icon}
                     </span>
                     <div>
                       <p className="text-[11px] font-semibold uppercase tracking-widest text-surface/30 mb-1">{item.label}</p>
                       {item.href ? (
-                        <a href={item.href} className="whitespace-pre-line text-surface font-medium hover:text-brand transition-colors">
+                        <a href={item.href} className="whitespace-pre-line text-surface font-medium hover:text-brand-start transition-colors text-xs sm:text-sm">
                           {item.value}
                         </a>
                       ) : (
-                        <p className="whitespace-pre-line text-surface font-medium">{item.value}</p>
+                        <p className="whitespace-pre-line text-surface font-medium text-xs sm:text-sm">{item.value}</p>
                       )}
                     </div>
                   </li>
@@ -154,14 +143,14 @@ export default function ContactPage() {
               {/* Map Embed Placeholder */}
               <div className="overflow-hidden rounded-[20px] bg-[#f2f2f2] aspect-[4/3] flex items-center justify-center">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.0198765432!2d-122.41941!3d37.7749!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80858080!2sSan+Francisco%2C+CA!5e0!3m2!1sen!2sus!4v1234567890"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d223253.98765432!2d78.9619!3d21.1458!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4c0a5a3a5f22f%3A0x6b306443c2c48e8!2sNagpur%2C+Maharashtra!5e0!3m2!1sen!2sin!4v1234567890"
                   width="100%"
                   height="100%"
                   style={{ border: 0, minHeight: "280px" }}
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Phisio Clinic Location"
+                  title="Reactive Nagpur Coverage Area Map"
                 />
               </div>
             </div>

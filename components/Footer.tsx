@@ -2,6 +2,7 @@
 
 import React, { useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 import {
   motion,
@@ -125,7 +126,7 @@ export function Footer() {
         <div
           className="absolute -top-40 -left-40 h-[480px] w-[480px] rounded-full opacity-20"
           style={{
-            background: "radial-gradient(circle, rgba(197,110,94,0.6) 0%, transparent 70%)",
+            background: "radial-gradient(circle, rgba(14, 165, 233, 0.6) 0%, transparent 70%)",
             filter: "blur(80px)",
           }}
         />
@@ -159,10 +160,13 @@ export function Footer() {
       >
         {/* Brand column */}
         <motion.div variants={fadeUp} className="flex flex-col gap-7">
-          <Link href="/" className="inline-block w-fit">
-            <span className="text-2xl font-bold tracking-tight text-white">
-              Phisio<span className="text-brand">.</span>
-            </span>
+          <Link href="/" className="relative block h-[56px] w-[220px]">
+            <Image
+              src="/logo/Reactive Physical Therapy.svg"
+              alt="Reactive Physical Therapy Logo"
+              fill
+              className="object-contain brightness-0 invert"
+            />
           </Link>
 
           <p className="max-w-[260px] text-sm leading-relaxed text-white/40">
@@ -239,7 +243,7 @@ export function Footer() {
                   </svg>
                 ),
                 label: "Location",
-                value: "123 Healing Way, Suite 100\nSan Francisco, CA 94105",
+                value: "Home-Based Private Care\nNagpur, Maharashtra, India",
                 href: undefined,
               },
               {
@@ -250,8 +254,8 @@ export function Footer() {
                   </svg>
                 ),
                 label: "Email",
-                value: "hello@phisio.com",
-                href: "mailto:hello@phisio.com",
+                value: "hello@reactivept.in",
+                href: "mailto:hello@reactivept.in",
               },
               {
                 icon: (
@@ -260,8 +264,8 @@ export function Footer() {
                   </svg>
                 ),
                 label: "Phone",
-                value: "+1 (234) 567-890",
-                href: "tel:+1234567890",
+                value: "+91 98230 12345",
+                href: "tel:+919823012345",
               },
             ].map((item) => (
               <li key={item.label} className="group flex items-start gap-3">
@@ -300,17 +304,17 @@ export function Footer() {
         <motion.div
           aria-hidden
           className="absolute left-0 top-0 h-px w-full"
-          style={{ background: "linear-gradient(90deg, transparent 0%, rgba(197,110,94,0.6) 50%, transparent 100%)" }}
+          style={{ background: "linear-gradient(90deg, transparent 0%, rgba(30, 64, 175, 0.6) 50%, transparent 100%)" }}
           animate={{ x: ["-100%", "100%"] }}
           transition={{ duration: 3, repeat: Infinity, ease: "linear", repeatDelay: 4 }}
         />
 
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-6 py-6 text-xs text-white/25 md:flex-row md:px-10">
-          <p>© {new Date().getFullYear()} Phisio. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Reactive. All rights reserved.</p>
 
           <div className="flex items-center gap-1">
             <span className="inline-block h-1.5 w-1.5 animate-pulse rounded-full bg-brand/60" />
-            <span className="ml-1 text-white/20">Powered by phisio care</span>
+            <span className="ml-1 text-white/20">Powered by Reactive Care</span>
           </div>
 
           <div className="flex items-center gap-5">

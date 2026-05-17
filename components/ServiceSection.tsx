@@ -8,27 +8,40 @@ import { AnimatedButton } from "./AnimatedButton";
 
 const services = [
   {
-    title: "Gait training",
-    description: "Customized recovery plans to restore athletic performance.",
-    image:
-      "https://framerusercontent.com/images/x9BbpMW2l1ETXjm885q6jCtWRYc.jpg",
-    link: "/service/gait-training",
+    title: "Science-based Physiotherapy & Pain Relief",
+    description: "Evidence-backed care to target pain, reduce inflammation, and restore natural movement patterns.",
+    image: "https://framerusercontent.com/images/3ReT5xeX5z4tvOwGXq4uK0APU4.jpg",
+    link: "/service/physiotherapy-pain-relief",
   },
   {
-    title: "Sports rehabilitation",
-    description:
-      "Personalized rehabilitation programs designed by peak athletic performance.",
-    image:
-      "https://framerusercontent.com/images/4NjxubX1dvlVTQPtjdeJOn62UU.jpg",
+    title: "Personalised Rehab & Post-Rehabilitation",
+    description: "Customized rehabilitation programs designed to rebuild strength and safety after injury or surgery.",
+    image: "https://framerusercontent.com/images/x9BbpMW2l1ETXjm885q6jCtWRYc.jpg",
+    link: "/service/personalised-rehab-post-rehabilitation",
+  },
+  {
+    title: "Strength & Fitness Training",
+    description: "Science-driven athletic conditioning to elevate physical capacity, endurance, and overall performance.",
+    image: "https://framerusercontent.com/images/fd7H4g2SyDOLmrGUUi05FNqLbw.jpg",
+    link: "/service/strength-fitness-training",
+  },
+  {
+    title: "Posture Correction",
+    description: "Targeted posture training and corrective exercises to relieve strain and restore alignment.",
+    image: "https://framerusercontent.com/images/WYxFJy7m3eXg59BXG2MbDNE4M.jpg",
+    link: "/service/posture-correction",
+  },
+  {
+    title: "Sports Rehab",
+    description: "Elite physical rehabilitation tailored to get athletes back in action safely and rapidly.",
+    image: "https://framerusercontent.com/images/4NjxubX1dvlVTQPtjdeJOn62UU.jpg",
     link: "/service/sports-rehabilitation",
   },
   {
-    title: "Women's therapy",
-    description:
-      "Tailored recovery strategies to help athletes return stronger and faster.",
-    image:
-      "https://framerusercontent.com/images/EuE334zfvtYBi9vwSBstq2xqJY.jpg",
-    link: "/service/womens-therapy",
+    title: "ANC – PNC Care",
+    description: "Specialized, compassionate therapy supporting mothers before and after childbirth with pelvic health.",
+    image: "https://framerusercontent.com/images/EuE334zfvtYBi9vwSBstq2xqJY.jpg",
+    link: "/service/anc-pnc-care",
   },
 ];
 
@@ -46,7 +59,7 @@ export function ServiceSection() {
               transition={{ duration: 0.6 }}
               className="mb-8 inline-flex items-center gap-2 rounded-full border border-black/10 px-5 py-2"
             >
-              <span className="text-brand font-bold">//</span>
+              <span className="text-accent font-bold">{"//"}</span>
               <span className="text-sm font-semibold tracking-wide text-surface">
                 Our Expertise
               </span>
@@ -56,7 +69,7 @@ export function ServiceSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="max-w-xl text-[40px] leading-[1.1] font-bold tracking-tight text-surface sm:text-[48px] lg:text-[56px]"
+              className="max-w-xl text-[30px] leading-[1.2] font-semibold tracking-tight text-surface sm:text-[36px] lg:text-[44px]"
             >
               Personalised treatment <br className="hidden md:block" />
               plans tailored for each patient
@@ -73,7 +86,7 @@ export function ServiceSection() {
             <AnimatedButton
               href="/service"
               text="All Services"
-              className="bg-brand text-white"
+              className="bg-linear-to-r from-brand-start to-brand-end hover:brightness-110 text-white font-semibold shadow-md transition-all hover:shadow-[0_8px_24px_rgba(25,79,162,0.2)] hover:scale-[1.02]"
             />
           </motion.div>
         </div>
@@ -106,13 +119,21 @@ export function ServiceSection() {
                 <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent opacity-80 transition-opacity duration-500 group-hover:opacity-100" />
 
                 {/* Content */}
-                <div className="absolute inset-x-0 bottom-0 flex flex-col justify-end p-8 text-white md:p-10">
-                  <h6 className="mb-3 text-[28px] leading-tight font-bold md:text-[32px]">
+                <div className="absolute inset-x-0 bottom-0 flex flex-col justify-end p-6 text-white md:p-8 z-10">
+                  <h6 className="mb-2 text-[20px] sm:text-[22px] leading-snug font-bold">
                     {service.title}
                   </h6>
-                  <p className="text-base font-medium text-white/90 md:text-lg">
+                  <p className="text-xs sm:text-sm font-medium text-white/80">
                     {service.description}
                   </p>
+                  
+                  {/* Modern interactive slide-up badge */}
+                  <div className="mt-5 flex items-center gap-2 text-xs sm:text-sm font-semibold text-accent opacity-0 translate-y-3 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">
+                    <span>Explore Service</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="transition-transform duration-300 group-hover:translate-x-1.5">
+                      <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                  </div>
                 </div>
               </Link>
             </motion.div>
@@ -130,7 +151,7 @@ export function ServiceSection() {
           <AnimatedButton
             href="/service"
             text="All Services"
-            className="bg-brand text-white"
+            className="bg-linear-to-r from-brand-start to-brand-end hover:brightness-110 text-white font-semibold shadow-md transition-all hover:shadow-[0_8px_24px_rgba(25,79,162,0.2)]"
           />
         </motion.div>
       </div>

@@ -3,9 +3,9 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Pricing – Phisio | Transparent Physiotherapy Pricing",
+  title: "Pricing – Reactive | Transparent Physiotherapy Pricing",
   description:
-    "View Phisio's clear, transparent pricing plans for physiotherapy sessions. No hidden fees — just expert care at fair prices.",
+    "View Reactive's clear, transparent pricing plans for physiotherapy sessions. No hidden fees — just expert care at fair prices.",
 };
 
 const plans = [
@@ -148,7 +148,7 @@ export default function PricingPage() {
                   href="/contact"
                   className={`inline-flex items-center justify-center gap-2 rounded-full px-7 py-4 text-sm font-semibold transition-all duration-300 ${
                     plan.featured
-                      ? "bg-brand text-white hover:shadow-[0_8px_24px_rgba(197,110,94,0.5)]"
+                      ? "bg-brand text-white hover:shadow-[0_8px_24px_rgba(0,167,216,0.5)]"
                       : "bg-surface text-white hover:bg-brand"
                   }`}
                 >

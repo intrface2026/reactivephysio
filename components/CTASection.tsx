@@ -7,7 +7,7 @@ import Image from "next/image";
 
 export function CTASection() {
   return (
-    <section className="relative w-full overflow-hidden bg-brand px-6 py-24 md:px-10 md:py-32">
+    <section className="relative w-full overflow-hidden bg-linear-to-r from-brand-start to-brand-end px-6 py-24 md:px-10 md:py-32">
       <div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-between gap-12 text-center md:flex-row md:items-start md:text-left">
         {/* Left Content */}
         <div className="flex max-w-2xl flex-col items-center md:items-start z-10">
@@ -29,7 +29,7 @@ export function CTASection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="mb-8 text-[40px] leading-[1.1] font-bold tracking-tight text-white sm:text-[48px] lg:text-[64px]"
+            className="mb-8 text-[30px] leading-[1.2] font-semibold tracking-tight text-white sm:text-[36px] lg:text-[44px]"
           >
             Ready to start your recovery journey?
           </motion.h2>
@@ -43,7 +43,7 @@ export function CTASection() {
             <AnimatedButton
               href="/contact"
               text="Book Appointment"
-              className="bg-surface text-white hover:bg-black w-fit"
+              className="bg-accent !text-slate-950 hover:bg-accent-hover shadow-md transition-all hover:scale-[1.02] w-fit"
             />
           </motion.div>
         </div>

@@ -30,7 +30,7 @@ export function ChooseUsSection() {
             transition={{ duration: 0.6 }}
             className="mb-8 inline-flex items-center gap-2 self-start rounded-full border border-white/20 bg-white/5 px-5 py-2"
           >
-            <span className="text-brand font-bold">//</span>
+            <span className="text-accent font-bold">//</span>
             <span className="text-sm font-semibold tracking-wide text-white">
               Why Choose Us
             </span>
@@ -41,7 +41,7 @@ export function ChooseUsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="mb-12 text-[40px] leading-[1.1] font-bold tracking-tight text-white sm:text-[48px] lg:text-[56px]"
+            className="mb-12 text-[30px] leading-[1.2] font-semibold tracking-tight text-white sm:text-[36px] lg:text-[44px]"
           >
             Highly experienced, certified <br className="hidden md:block" />
             physiotherapists
@@ -59,10 +59,10 @@ export function ChooseUsSection() {
                   transition={{ duration: 0.5, delay: 0.3 + idx * 0.1 }}
                   className="flex items-start gap-4"
                 >
-                  <span className="text-brand mt-1 font-bold leading-none">
+                  <span className="text-accent mt-1 font-bold leading-none">
                     //
                   </span>
-                  <p className="text-lg text-white/90">{feature}</p>
+                  <p className="text-sm sm:text-base text-white/90">{feature}</p>
                 </motion.div>
               ))}
             </div>
@@ -99,14 +99,14 @@ export function ChooseUsSection() {
               className="flex flex-col border-t border-white/10 pt-6"
             >
               <div className="mb-2 flex items-baseline gap-1 font-bold text-white">
-                <span className="text-[56px] leading-none tracking-tight md:text-[64px]">
+                <span className="text-[44px] leading-none tracking-tight md:text-[52px]">
                   {stat.value.replace(/[^0-9.]/g, "")}
                 </span>
-                <span className="text-brand text-[40px] leading-none md:text-[48px]">
+                <span className="bg-linear-to-r from-brand-start to-brand-end bg-clip-text text-transparent text-[32px] leading-none md:text-[40px]">
                   {stat.value.replace(/[0-9.]/g, "")}
                 </span>
               </div>
-              <p className="text-lg text-white/70">{stat.label}</p>
+              <p className="text-sm sm:text-base text-white/70">{stat.label}</p>
             </motion.div>
           ))}
         </div>

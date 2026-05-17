@@ -131,7 +131,7 @@ export function BlogSection() {
               transition={{ duration: 0.6 }}
               className="inline-flex items-center gap-2 rounded-full border border-black/10 px-5 py-2"
             >
-              <span className="text-brand font-bold">//</span>
+              <span className="text-accent font-bold">//</span>
               <span className="text-sm font-semibold tracking-wide text-surface">
                 Insights
               </span>
@@ -141,7 +141,7 @@ export function BlogSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-[40px] leading-[1.1] font-bold tracking-tight text-surface sm:text-[48px]"
+              className="text-[30px] leading-[1.2] font-semibold tracking-tight text-surface sm:text-[36px] lg:text-[40px]"
             >
               Company blog &amp; insights
             </motion.h2>
@@ -163,10 +163,10 @@ export function BlogSection() {
                 >
                   {/* Left: Meta */}
                   <div className="flex shrink-0 flex-col gap-4 md:w-48">
-                    <span className="inline-flex w-fit items-center rounded-full bg-brand px-4 py-1.5 text-sm font-semibold text-white">
+                    <span className="inline-flex w-fit items-center rounded-full bg-linear-to-r from-brand-start to-brand-end px-4 py-1.5 text-xs font-semibold text-white">
                       {post.category}
                     </span>
-                    <div className="flex items-center gap-2 text-surface/60 text-sm">
+                    <div className="flex items-center gap-2 text-surface/60 text-xs sm:text-sm">
                       <span>{post.date}</span>
                       <span>·</span>
                       <span>{post.author}</span>
@@ -175,13 +175,13 @@ export function BlogSection() {
 
                   {/* Center: Content */}
                   <div className="flex flex-1 flex-col gap-3">
-                    <h5 className="text-xl font-bold leading-snug text-surface transition-colors group-hover:text-brand md:text-2xl">
+                    <h5 className="text-lg font-semibold leading-snug text-surface transition-colors group-hover:text-brand-start md:text-[20px]">
                       {post.title}
                     </h5>
-                    <p className="text-surface/60 leading-relaxed line-clamp-2">
+                    <p className="text-xs sm:text-sm text-surface/60 leading-relaxed line-clamp-2">
                       {post.excerpt}
                     </p>
-                    <div className="mt-2 flex items-center gap-1.5 text-surface font-semibold text-sm">
+                    <div className="mt-2 flex items-center gap-1.5 text-surface/80 font-semibold text-xs sm:text-sm group-hover:text-accent transition-colors">
                       <svg
                         width="16"
                         height="16"

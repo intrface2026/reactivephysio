@@ -31,7 +31,7 @@ A physiotherapist is a trained healthcare professional who uses evidence-based t
 
 No two patients are the same. Even two people with identical diagnoses — say, a herniated disc at L4–L5 — may require completely different treatment approaches based on their age, lifestyle, fitness level, and personal goals.
 
-At Phisio, we spend a significant part of your initial appointment understanding you as a whole person, not just your injury.
+At Reactive, we spend a significant part of your initial appointment understanding you as a whole person, not just your injury.
 
 ## Evidence-Based Techniques We Use
 
@@ -61,7 +61,7 @@ If you have questions about your condition or want to know whether physiotherapy
     authorImage: "https://framerusercontent.com/images/t1QOMAtulA7DvOsUx3HooiC5xA.png",
     readTime: "4 min read",
     image: "https://framerusercontent.com/images/QMMFsXTskIclW8xuuUxfuYPnQ.jpg",
-    content: `Knee injuries are among the most common conditions we treat at Phisio. Whether you are an athlete who has suffered a ligament tear or someone with chronic osteoarthritis, the knee is incredibly responsive to targeted physiotherapy.
+    content: `Knee injuries are among the most common conditions we treat at Reactive. Whether you are an athlete who has suffered a ligament tear or someone with chronic osteoarthritis, the knee is incredibly responsive to targeted physiotherapy.
 
 ## The Anatomy of the Knee
 
@@ -105,7 +105,7 @@ Our understanding of pain has changed dramatically. We now know that pain is a c
 
 ## Faster, Safer Recovery
 
-The result of these advances is that patients are recovering faster, with lower re-injury rates, and returning to the activities they love sooner than ever before. At Phisio, we are committed to staying at the forefront of these developments.`,
+The result of these advances is that patients are recovering faster, with lower re-injury rates, and returning to the activities they love sooner than ever before. At Reactive, we are committed to staying at the forefront of these developments.`,
   },
 };
 
@@ -114,9 +114,9 @@ type Params = { slug: string };
 export async function generateMetadata({ params }: { params: Promise<Params> }): Promise<Metadata> {
   const { slug } = await params;
   const post = posts[slug];
-  if (!post) return { title: "Blog Post – Phisio" };
+  if (!post) return { title: "Blog Post – Reactive" };
   return {
-    title: `${post.title} – Phisio Blog`,
+    title: `${post.title} – Reactive Blog`,
     description: post.content.substring(0, 160).replace(/[#*]/g, "").trim(),
   };
 }
@@ -224,7 +224,7 @@ export default async function BlogPostPage({ params }: { params: Promise<Params>
             </div>
             <div>
               <p className="font-bold text-surface">{post.author}</p>
-              <p className="text-surface/50 text-sm">Physiotherapist at Phisio</p>
+              <p className="text-surface/50 text-sm">Physiotherapist at Reactive</p>
             </div>
           </div>
 

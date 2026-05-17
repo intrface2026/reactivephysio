@@ -34,9 +34,9 @@ export default function ContactForm() {
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
-        className="flex flex-col items-center justify-center rounded-[24px] bg-brand/5 border border-brand/20 p-16 text-center gap-6"
+        className="flex flex-col items-center justify-center rounded-[24px] bg-brand-start/5 border border-brand-start/20 p-16 text-center gap-6"
       >
-        <span className="flex h-16 w-16 items-center justify-center rounded-full bg-brand/15 text-brand">
+        <span className="flex h-16 w-16 items-center justify-center rounded-full bg-brand-start/15 text-brand-start">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <polyline points="20 6 9 17 4 12" />
           </svg>
@@ -47,7 +47,7 @@ export default function ContactForm() {
         </p>
         <button
           onClick={() => { setState("idle"); setForm({ name: "", email: "", phone: "", service: "", message: "" }); }}
-          className="rounded-full bg-surface px-6 py-3 text-sm font-semibold text-white hover:bg-brand transition-colors"
+          className="rounded-full bg-surface px-6 py-3 text-sm font-semibold text-white hover:bg-linear-to-r hover:from-brand-start hover:to-brand-end transition-all"
         >
           Send Another Message
         </button>
@@ -57,8 +57,8 @@ export default function ContactForm() {
 
   return (
     <div>
-      <h2 className="text-[32px] font-bold text-surface sm:text-[40px] mb-2">Book an appointment</h2>
-      <p className="text-surface/60 mb-10 leading-relaxed">
+      <h2 className="text-[24px] sm:text-[30px] font-semibold text-surface mb-2">Book an appointment</h2>
+      <p className="text-xs sm:text-sm text-surface/60 mb-10 leading-relaxed">
         Fill in your details and we will get back to you with availability.
       </p>
       <form onSubmit={handleSubmit} className="flex flex-col gap-5">
@@ -75,7 +75,7 @@ export default function ContactForm() {
               value={form.name}
               onChange={handleChange}
               placeholder="John Doe"
-              className="rounded-xl border border-black/10 bg-[#f8f8f8] px-4 py-3.5 text-surface placeholder-surface/30 outline-none transition-all focus:border-brand/40 focus:ring-2 focus:ring-brand/10"
+              className="rounded-xl border border-black/10 bg-[#f8f8f8] px-4 py-3.5 text-xs sm:text-sm text-surface placeholder-surface/30 outline-none transition-all focus:border-brand-start/50 focus:ring-2 focus:ring-brand-start/10"
             />
           </div>
           <div className="flex flex-col gap-2">
@@ -90,7 +90,7 @@ export default function ContactForm() {
               value={form.email}
               onChange={handleChange}
               placeholder="john@example.com"
-              className="rounded-xl border border-black/10 bg-[#f8f8f8] px-4 py-3.5 text-surface placeholder-surface/30 outline-none transition-all focus:border-brand/40 focus:ring-2 focus:ring-brand/10"
+              className="rounded-xl border border-black/10 bg-[#f8f8f8] px-4 py-3.5 text-xs sm:text-sm text-surface placeholder-surface/30 outline-none transition-all focus:border-brand-start/50 focus:ring-2 focus:ring-brand-start/10"
             />
           </div>
         </div>
@@ -107,7 +107,7 @@ export default function ContactForm() {
               value={form.phone}
               onChange={handleChange}
               placeholder="+1 234 567 890"
-              className="rounded-xl border border-black/10 bg-[#f8f8f8] px-4 py-3.5 text-surface placeholder-surface/30 outline-none transition-all focus:border-brand/40 focus:ring-2 focus:ring-brand/10"
+              className="rounded-xl border border-black/10 bg-[#f8f8f8] px-4 py-3.5 text-xs sm:text-sm text-surface placeholder-surface/30 outline-none transition-all focus:border-brand-start/50 focus:ring-2 focus:ring-brand-start/10"
             />
           </div>
           <div className="flex flex-col gap-2">
@@ -119,7 +119,7 @@ export default function ContactForm() {
               name="service"
               value={form.service}
               onChange={handleChange}
-              className="rounded-xl border border-black/10 bg-[#f8f8f8] px-4 py-3.5 text-surface outline-none transition-all focus:border-brand/40 focus:ring-2 focus:ring-brand/10"
+              className="rounded-xl border border-black/10 bg-[#f8f8f8] px-4 py-3.5 text-xs sm:text-sm text-surface outline-none transition-all focus:border-brand-start/50 focus:ring-2 focus:ring-brand-start/10"
             >
               <option value="">Select a service…</option>
               <option>Gait Training</option>
@@ -145,14 +145,14 @@ export default function ContactForm() {
             value={form.message}
             onChange={handleChange}
             placeholder="Tell us about your condition or what you need help with…"
-            className="rounded-xl border border-black/10 bg-[#f8f8f8] px-4 py-3.5 text-surface placeholder-surface/30 outline-none transition-all focus:border-brand/40 focus:ring-2 focus:ring-brand/10 resize-none"
+            className="rounded-xl border border-black/10 bg-[#f8f8f8] px-4 py-3.5 text-xs sm:text-sm text-surface placeholder-surface/30 outline-none transition-all focus:border-brand-start/50 focus:ring-2 focus:ring-brand-start/10 resize-none"
           />
         </div>
 
         <button
           type="submit"
           disabled={state === "loading"}
-          className="group relative mt-2 inline-flex items-center justify-center gap-2.5 overflow-hidden rounded-full bg-brand px-8 py-4 text-sm font-semibold text-white shadow-[0_0_32px_rgba(197,110,94,0.3)] transition-all hover:shadow-[0_0_48px_rgba(197,110,94,0.5)] disabled:opacity-60"
+          className="group relative mt-2 inline-flex items-center justify-center gap-2.5 overflow-hidden rounded-full bg-linear-to-r from-brand-start to-brand-end px-8 py-4 text-sm font-semibold text-white shadow-[0_8px_24px_rgba(25,79,162,0.2)] transition-all hover:shadow-[0_12px_32px_rgba(25,79,162,0.3)] hover:scale-[1.01] disabled:opacity-60 cursor-pointer"
         >
           <span className="absolute inset-0 translate-x-[-100%] skew-x-[-18deg] bg-white/20 transition-transform duration-500 group-hover:translate-x-[200%]" aria-hidden />
           <span className="relative z-10">

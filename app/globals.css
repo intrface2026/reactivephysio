@@ -1,14 +1,26 @@
 @import "tailwindcss";
 
 @theme {
-  --color-background: #ffffff;
-  --color-foreground: #111111;
+  --color-background: #f8fafc; /* bg-slate-50 (Clean, welcoming canvas) */
+  --color-foreground: #0f172a; /* text-slate-900 (Highly readable dark body text) */
 
-  --color-brand: #c56e5e;
-  --color-surface: #232323; /* Dark gray */
-  --color-muted: rgba(17, 17, 17, 0.6);
+  --color-brand: #1e40af; /* Main solid Brand Blue (Tailwind blue-800, matches REACTIVE logo) */
+  --color-brand-start: #1e40af; /* Human Figure Gradient start (Deep blue-800) */
+  --color-brand-mid: #0284c7; /* Human Figure Gradient mid (Sky-600) */
+  --color-brand-end: #0ea5e9; /* Human Figure Gradient end / Lighter Accent Blue (Sky-500) */
+  --color-brand-light: #0ea5e9; /* Lighter Accent Blue (Sky-500) */
+  --color-brand-hover: #1d4ed8; /* Brand Blue Hover (Tailwind blue-700) */
 
-  --font-sans: "Open Sauce One", "Open Sauce One Placeholder", sans-serif;
+  --color-accent: #fbbf24; /* Call-to-Action Amber-400 (Instant focal point) */
+  --color-accent-start: #fbbf24; /* Yellow Crescent Gradient start (Amber-400) */
+  --color-accent-end: #fde047; /* Yellow Crescent Gradient end (Yellow-300) */
+  --color-accent-hover: #f59e0b; /* CTA Hover State (Amber-500) */
+
+  --color-surface: #0f172a; /* Premium Dark Slate-900 for dark/light contrast sections */
+  --color-muted: #64748b; /* text-slate-500 */
+
+  --font-sans: var(--font-sans), sans-serif;
+  --font-display: var(--font-display), sans-serif;
 }
 
 @layer base {
@@ -16,6 +28,9 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
     @apply antialiased font-sans;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight;
   }
 }
 

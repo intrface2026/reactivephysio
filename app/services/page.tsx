@@ -3,59 +3,59 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Our Services – Phisio | Physiotherapy & Rehabilitation",
+  title: "Our Services – Reactive | Home-Based Physiotherapy",
   description:
-    "Explore our comprehensive range of physiotherapy services including gait training, sports rehabilitation, manual therapy, and more.",
+    "Explore our comprehensive range of home-based physiotherapy services in Nagpur including science-based pain relief, personalized rehab, sports rehab, and ANC-PNC care.",
 };
 
 const services = [
   {
-    title: "Gait Training",
-    slug: "gait-training",
+    title: "Science-based Physiotherapy & Pain Relief",
+    slug: "physiotherapy-pain-relief",
     description:
-      "Customised recovery plans to restore natural walking patterns and improve mobility. Ideal for patients recovering from strokes, surgeries, or neurological conditions.",
-    image: "https://framerusercontent.com/images/x9BbpMW2l1ETXjm885q6jCtWRYc.jpg",
-    tags: ["Rehabilitation", "Mobility", "Neurological"],
+      "Evidence-backed care to target pain, reduce inflammation, and restore natural movement patterns using drug-free, modern techniques right in your home.",
+    image: "https://framerusercontent.com/images/3ReT5xeX5z4tvOwGXq4uK0APU4.jpg",
+    tags: ["Pain Relief", "Evidence-Based", "Drug-Free"],
   },
   {
-    title: "Sports Rehabilitation",
+    title: "Personalised Rehab & Post-Rehabilitation",
+    slug: "personalised-rehab-post-rehabilitation",
+    description:
+      "Tailored recovery programs designed to safely guide you back to full function, strength, and mobility after injury or surgical procedures.",
+    image: "https://framerusercontent.com/images/x9BbpMW2l1ETXjm885q6jCtWRYc.jpg",
+    tags: ["Rehabilitation", "Post-Surgical", "Recovery"],
+  },
+  {
+    title: "Strength & Fitness Training",
+    slug: "strength-fitness-training",
+    description:
+      "Science-driven strength training and athletic conditioning designed to improve physical capacity, prevent injury, and elevate your fitness levels.",
+    image: "https://framerusercontent.com/images/fd7H4g2SyDOLmrGUUi05FNqLbw.jpg",
+    tags: ["Strength", "Fitness", "Performance"],
+  },
+  {
+    title: "Posture Correction",
+    slug: "posture-correction",
+    description:
+      "Targeted alignment therapy and corrective exercises to address postural strain, neck or back stiffness, and computer-related tension.",
+    image: "https://framerusercontent.com/images/WYxFJy7m3eXg59BXG2MbDNE4M.jpg",
+    tags: ["Alignment", "Posture", "Ergonomics"],
+  },
+  {
+    title: "Sports Rehab",
     slug: "sports-rehabilitation",
     description:
-      "Personalized rehabilitation programs designed to return athletes to peak performance. We treat all sports injuries from ACL tears to shoulder impingements.",
+      "Dedicated, phase-based physical therapy focused on restoring athletic mechanics, speed, and sports-specific strength safely and rapidly.",
     image: "https://framerusercontent.com/images/4NjxubX1dvlVTQPtjdeJOn62UU.jpg",
-    tags: ["Sports", "Performance", "Recovery"],
+    tags: ["Sports", "Injury Rehab", "Agility"],
   },
   {
-    title: "Women's Therapy",
-    slug: "womens-therapy",
+    title: "ANC – PNC Care (Antenatal & Postnatal)",
+    slug: "anc-pnc-care",
     description:
-      "Specialised physiotherapy addressing women's health needs including prenatal and postnatal care, pelvic floor rehabilitation, and hormonal health management.",
+      "Specialized, compassionate physiotherapy addressing prenatal wellness, safe core exercises during pregnancy, and complete postpartum pelvic floor recovery.",
     image: "https://framerusercontent.com/images/EuE334zfvtYBi9vwSBstq2xqJY.jpg",
-    tags: ["Women's Health", "Prenatal", "Pelvic Floor"],
-  },
-  {
-    title: "Manual Therapy",
-    slug: "manual-therapy",
-    description:
-      "Hands-on techniques including joint mobilisation, soft tissue massage, and myofascial release to reduce pain, improve flexibility, and restore function.",
-    image: "https://framerusercontent.com/images/fd7H4g2SyDOLmrGUUi05FNqLbw.jpg",
-    tags: ["Hands-On", "Pain Relief", "Flexibility"],
-  },
-  {
-    title: "Pain Management",
-    slug: "pain-management",
-    description:
-      "Comprehensive, drug-free pain management programs targeting chronic and acute pain through targeted exercises, education, and advanced modalities.",
-    image: "https://framerusercontent.com/images/3ReT5xeX5z4tvOwGXq4uK0APU4.jpg",
-    tags: ["Chronic Pain", "Acute Pain", "Drug-Free"],
-  },
-  {
-    title: "Paediatric Physiotherapy",
-    slug: "paediatric-physiotherapy",
-    description:
-      "Child-centred physiotherapy supporting developmental milestones, treating musculoskeletal conditions, and building strength in young patients.",
-    image: "https://framerusercontent.com/images/WYxFJy7m3eXg59BXG2MbDNE4M.jpg",
-    tags: ["Children", "Development", "Musculoskeletal"],
+    tags: ["Maternal Care", "Prenatal", "Postnatal"],
   },
 ];
 
@@ -76,15 +76,15 @@ export default function ServicesPage() {
         </div>
         <div className="relative mx-auto max-w-7xl">
           <div className="inline-flex items-center gap-2 rounded-full border border-white/20 px-5 py-2 mb-6">
-            <span className="text-brand font-bold">//</span>
+            <span className="text-accent font-bold">//</span>
             <span className="text-sm font-semibold tracking-wide text-white">Our Expertise</span>
           </div>
-          <h1 className="max-w-3xl text-[40px] leading-[1.1] font-bold tracking-tight text-white sm:text-[56px] lg:text-[72px]">
+          <h1 className="max-w-3xl text-[32px] sm:text-[44px] lg:text-[52px] leading-[1.2] font-semibold tracking-tight text-white">
             Personalised treatment<br />
-            <span className="text-brand">for every patient</span>
+            <span className="bg-linear-to-r from-brand-start to-brand-end bg-clip-text text-transparent">for every patient</span>
           </h1>
-          <p className="mt-6 max-w-xl text-lg text-white/60 leading-relaxed">
-            From elite sports rehabilitation to chronic pain management, our specialist team delivers evidence-based physiotherapy tailored to your unique needs.
+          <p className="mt-6 max-w-xl text-sm sm:text-base text-white/60 leading-relaxed">
+            From elite sports rehabilitation to chronic pain management, Reactive delivers evidence-based physiotherapy tailored to your unique needs.
           </p>
         </div>
       </section>
@@ -113,16 +113,16 @@ export default function ServicesPage() {
                     {service.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="rounded-full bg-brand/10 px-3 py-1 text-xs font-semibold text-brand"
+                        className="rounded-full bg-brand-start/10 px-3 py-1 text-xs font-semibold text-brand-start"
                       >
                         {tag}
                       </span>
                     ))}
                   </div>
-                  <h2 className="text-2xl font-bold text-surface group-hover:text-brand transition-colors duration-200">
+                  <h2 className="text-xl font-semibold text-surface group-hover:text-brand-start transition-colors duration-200">
                     {service.title}
                   </h2>
-                  <p className="text-surface/60 leading-relaxed text-sm flex-1">{service.description}</p>
+                  <p className="text-surface/60 leading-relaxed text-xs sm:text-sm flex-1">{service.description}</p>
                   <div className="mt-2 flex items-center gap-2 text-sm font-semibold text-surface">
                     <span>Learn More</span>
                     <svg
@@ -145,10 +145,10 @@ export default function ServicesPage() {
         <div className="mx-auto w-full max-w-7xl">
           <div className="mb-16 text-center">
             <div className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white px-5 py-2 mb-6">
-              <span className="text-brand font-bold">//</span>
+              <span className="text-accent font-bold">//</span>
               <span className="text-sm font-semibold tracking-wide text-surface">How It Works</span>
             </div>
-            <h2 className="text-[36px] leading-[1.1] font-bold tracking-tight text-surface sm:text-[48px]">
+            <h2 className="text-[28px] sm:text-[34px] lg:text-[40px] leading-[1.2] font-semibold tracking-tight text-surface">
               Your recovery journey
             </h2>
           </div>
@@ -160,7 +160,7 @@ export default function ServicesPage() {
               { step: "04", title: "Recovery & Progress", desc: "We track your progress and adjust treatment as you improve." },
             ].map((item) => (
               <div key={item.step} className="flex flex-col gap-4">
-                <span className="text-[56px] font-bold leading-none text-brand/20">{item.step}</span>
+                <span className="text-[56px] font-bold leading-none text-brand-start/20">{item.step}</span>
                 <h3 className="text-xl font-bold text-surface">{item.title}</h3>
                 <p className="text-surface/60 text-sm leading-relaxed">{item.desc}</p>
               </div>
@@ -170,15 +170,15 @@ export default function ServicesPage() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="w-full bg-brand px-6 py-20 md:px-10">
+      <section className="w-full bg-linear-to-r from-brand-start to-brand-end px-6 py-20 md:px-10">
         <div className="mx-auto max-w-7xl flex flex-col md:flex-row items-center justify-between gap-8">
           <div>
-            <h2 className="text-[32px] font-bold text-white sm:text-[40px]">Not sure which service is right for you?</h2>
-            <p className="mt-2 text-white/70 text-lg">Book a free 15-minute consultation and we will guide you.</p>
+            <h2 className="text-[26px] sm:text-[32px] font-semibold text-white">Not sure which service is right for you?</h2>
+            <p className="mt-2 text-white/70 text-sm sm:text-base">Book a free 15-minute consultation and we will guide you.</p>
           </div>
           <Link
             href="/contact"
-            className="shrink-0 inline-flex items-center gap-2 rounded-full bg-surface px-8 py-4 text-sm font-semibold text-white transition-colors hover:bg-black"
+            className="shrink-0 inline-flex items-center gap-2 rounded-full bg-surface px-8 py-4 text-sm font-semibold text-white shadow-md transition-all hover:scale-[1.02] hover:brightness-110"
           >
             Book Free Consult
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

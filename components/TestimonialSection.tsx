@@ -39,7 +39,7 @@ function StarRating() {
         >
           <path
             d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"
-            fill="#C56E5E"
+            fill="var(--color-accent)"
           />
         </svg>
       ))}
@@ -87,9 +87,9 @@ function TestimonialCard({
           {testimonial.name}
         </p>
         <div className="my-2 h-px w-full bg-black/16" />
-        <p className="text-sm font-medium text-[#555555]">{testimonial.date}</p>
+        <p className="text-xs sm:text-sm font-medium text-[#555555]">{testimonial.date}</p>
       </div>
-      <p className="mb-6 flex-1 text-[18px] leading-relaxed text-surface">
+      <p className="mb-6 flex-1 text-xs sm:text-sm md:text-base leading-relaxed text-surface">
         {testimonial.text}
       </p>
       <StarRating />
@@ -113,7 +113,7 @@ export function TestimonialSection() {
               transition={{ duration: 0.6 }}
               className="inline-flex w-fit items-center gap-2 rounded-full border border-black/10 px-5 py-2"
             >
-              <span className="text-brand font-bold">//</span>
+              <span className="text-accent font-bold">//</span>
               <span className="text-sm font-semibold tracking-wide text-surface">
                 Testimonials
               </span>
@@ -125,7 +125,7 @@ export function TestimonialSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.6, delay: 0.15 }}
-              className="text-[40px] font-bold leading-[1.1] tracking-tight text-surface"
+              className="text-[30px] sm:text-[36px] lg:text-[40px] leading-[1.2] font-semibold tracking-tight text-surface"
             >
               Happy users says
               <br />
@@ -150,10 +150,10 @@ export function TestimonialSection() {
                   className="object-contain"
                 />
               </div>
-              <h3 className="text-[32px] font-bold leading-none text-surface">
-                3,500<span className="text-brand">+</span>
+              <h3 className="text-[28px] font-bold leading-none text-surface md:text-[32px]">
+                3,500<span className="text-accent">+</span>
               </h3>
-              <p className="mt-1 font-medium text-surface/60">Happy customer</p>
+              <p className="mt-1 text-xs sm:text-sm font-medium text-surface/60">Happy customer</p>
             </motion.div>
           </div>
 
