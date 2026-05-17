@@ -282,8 +282,8 @@ function DesktopMasonryGrid() {
 /* ─── Main export ────────────────────────────────────────────── */
 export function HeroSection() {
   return (
-    <section className="relative w-full overflow-hidden pt-[140px] pb-16 sm:pt-[160px] sm:pb-20 md:pt-[180px] md:pb-32">
-      <div className="mx-auto flex w-full max-w-4xl flex-col items-center justify-center gap-8 px-6 text-center md:gap-10 md:px-10">
+    <section className="relative w-full overflow-hidden bg-slant-lines pt-[140px] pb-16 sm:pt-[160px] sm:pb-20 md:pt-[180px] md:pb-32">
+      <div className="relative z-10 mx-auto flex w-full max-w-4xl flex-col items-center justify-center gap-8 px-6 text-center md:gap-10 md:px-10">
         {/* Top Pill */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -347,7 +347,7 @@ export function HeroSection() {
       </div>
 
       {/* Hero Images Below Text */}
-      <div className="mx-auto mt-16 max-w-7xl px-6 md:px-10 lg:mt-24">
+      <div className="relative z-10 mx-auto mt-16 max-w-7xl px-6 md:px-10 lg:mt-24">
         <div className="md:hidden">
           <MobileBentoGrid />
         </div>

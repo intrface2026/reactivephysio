@@ -43,3 +43,17 @@
     display: none;
   }
 }
+
+/* Premium Slant Lines Background Design */
+.bg-slant-lines {
+  background-color: var(--color-background);
+  background-image: 
+    linear-gradient(to bottom, rgba(248, 250, 252, 0) 50%, var(--color-background) 100%),
+    repeating-linear-gradient(
+      135deg,
+      rgba(15, 23, 42, 0.04) 0px,
+      rgba(15, 23, 42, 0.04) 1.5px,
+      transparent 1.5px,
+      transparent 10px
+    );
+}
