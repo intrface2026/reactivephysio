@@ -65,14 +65,10 @@ export function ScrollToTopButton() {
           <motion.button
             onClick={scrollToTop}
             aria-label="Scroll to top"
-            layout
             className="group relative flex items-center justify-center overflow-hidden rounded-full border border-white/40 bg-white/10 p-1.5 shadow-[0_8px_32px_rgba(0,0,0,0.12)] backdrop-blur-2xl transition-all duration-500 hover:border-white/80 hover:bg-white/30 hover:shadow-[0_16px_48px_rgba(30,64,175,0.25)]"
           >
             {/* The SVG Scroll Progress Ring Container */}
-            <motion.div
-              layout
-              className="relative flex h-[42px] w-[42px] shrink-0 items-center justify-center rounded-full bg-white/50 shadow-inner sm:h-[46px] sm:w-[46px]"
-            >
+            <div className="relative flex h-[42px] w-[42px] shrink-0 items-center justify-center rounded-full bg-white/50 shadow-inner sm:h-[46px] sm:w-[46px]">
               {/* Scroll Progress Ring */}
               <svg
                 className="absolute inset-0 h-full w-full -rotate-90 transform drop-shadow-sm"
@@ -140,27 +136,7 @@ export function ScrollToTopButton() {
                   </svg>
                 </motion.div>
               </div>
-            </motion.div>
-
-            {/* Expanding "Top" Text */}
-            <AnimatePresence>
-              {isHovered && (
-                <motion.span
-                  initial={{ width: 0, opacity: 0, paddingRight: 0, paddingLeft: 0 }}
-                  animate={{
-                    width: "auto",
-                    opacity: 1,
-                    paddingRight: 16,
-                    paddingLeft: 12,
-                  }}
-                  exit={{ width: 0, opacity: 0, paddingRight: 0, paddingLeft: 0 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 25 }}
-                  className="overflow-hidden whitespace-nowrap text-[15px] font-bold tracking-wide text-brand drop-shadow-sm"
-                >
-                  Top
-                </motion.span>
-              )}
-            </AnimatePresence>
+            </div>
 
             {/* Ambient internal hover glow */}
             <motion.div
