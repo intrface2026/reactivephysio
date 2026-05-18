@@ -163,26 +163,30 @@ export function Header() {
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-label="Toggle menu"
               aria-expanded={isMobileMenuOpen}
-              whileTap={{ scale: 0.9 }}
-              className="relative flex h-10 w-10 flex-col items-center justify-center"
+              whileTap={{ scale: 0.95 }}
+              className={`relative flex h-11 w-11 flex-col items-center justify-center rounded-full border transition-all duration-300 ${
+                scrolled
+                  ? "border-black/10 bg-white/80 shadow-sm"
+                  : "border-black/5 bg-white/40 hover:bg-white/60"
+              } backdrop-blur-md`}
             >
               <motion.span
                 animate={
                   isMobileMenuOpen
-                    ? { rotate: 45, y: 1.5, width: 20 }
-                    : { rotate: 0, y: -3, width: 20 }
+                    ? { rotate: 45, y: 1.5, width: 20, backgroundColor: "#1e40af" } // var(--color-brand)
+                    : { rotate: 0, y: -4, width: 22, backgroundColor: "#0f172a" } // var(--color-foreground)
                 }
                 transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-                className="absolute block h-[1.5px] rounded-full bg-black origin-center"
+                className="absolute block h-[1.5px] rounded-full origin-center"
               />
               <motion.span
                 animate={
                   isMobileMenuOpen
-                    ? { rotate: -45, y: -1.5, width: 20 }
-                    : { rotate: 0, y: 3, width: 20 }
+                    ? { rotate: -45, y: -1.5, width: 20, backgroundColor: "#1e40af" }
+                    : { rotate: 0, y: 4, width: 16, backgroundColor: "#0f172a" }
                 }
                 transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-                className="absolute block h-[1.5px] rounded-full bg-black origin-center"
+                className="absolute block h-[1.5px] rounded-full origin-center"
               />
             </motion.button>
           </div>
@@ -211,29 +215,30 @@ export function Header() {
               initial="closed"
               animate="open"
               exit="closed"
-              className="fixed inset-0 z-50 flex flex-col overflow-hidden"
-              style={{
-                background:
-                  "linear-gradient(145deg, #ffffff 0%, #fdf8f7 55%, #faeae6 100%)",
-              }}
+              className="fixed inset-0 z-50 flex flex-col overflow-hidden bg-white/95 backdrop-blur-2xl"
             >
-              {/* Ambient glow orb — purely decorative */}
+              {/* Premium Slant Lines overlay (optional) */}
+              <div className="absolute inset-0 pointer-events-none opacity-[0.03]" style={{
+                backgroundImage: `repeating-linear-gradient(135deg, #0f172a 0px, #0f172a 1.5px, transparent 1.5px, transparent 10px)`
+              }} />
+
+              {/* Ambient glow orb — using brand colors */}
               <div
                 aria-hidden
-                className="pointer-events-none absolute -right-24 -top-24 h-80 w-80 rounded-full opacity-40"
+                className="pointer-events-none absolute -right-24 -top-24 h-96 w-96 rounded-full opacity-30"
                 style={{
                   background:
-                    "radial-gradient(circle, rgba(14,165,233,0.35) 0%, transparent 70%)",
-                  filter: "blur(40px)",
+                    "radial-gradient(circle, var(--color-brand-light) 0%, transparent 70%)",
+                  filter: "blur(60px)",
                 }}
               />
               <div
                 aria-hidden
-                className="pointer-events-none absolute -bottom-16 -left-16 h-64 w-64 rounded-full opacity-25"
+                className="pointer-events-none absolute -bottom-16 -left-16 h-80 w-80 rounded-full opacity-15"
                 style={{
                   background:
-                    "radial-gradient(circle, rgba(14,165,233,0.4) 0%, transparent 70%)",
-                  filter: "blur(50px)",
+                    "radial-gradient(circle, var(--color-brand) 0%, transparent 70%)",
+                  filter: "blur(60px)",
                 }}
               />
 
@@ -261,10 +266,10 @@ export function Header() {
                   aria-label="Close menu"
                   whileTap={{ scale: 0.9, rotate: 90 }}
                   transition={{ duration: 0.2 }}
-                  className="flex h-9 w-9 items-center justify-center rounded-xl border border-black/8 text-foreground/60 transition-colors hover:bg-brand/10 hover:text-brand hover:border-brand/20"
+                  className="relative z-10 flex h-11 w-11 items-center justify-center rounded-full border border-black/10 bg-white/50 text-foreground/80 backdrop-blur-md shadow-sm transition-colors hover:bg-brand hover:text-white hover:border-brand/20"
                 >
                   <svg
-                    width="15" height="15" viewBox="0 0 24 24" fill="none"
+                    width="18" height="18" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" strokeWidth="2"
                     strokeLinecap="round" strokeLinejoin="round"
                   >
@@ -294,26 +299,26 @@ export function Header() {
                         className="group relative flex items-center justify-between border-b border-black/5 py-4 last:border-none"
                       >
                         {/* Index number */}
-                        <span className="mr-5 w-5 shrink-0 text-right text-[11px] font-medium tabular-nums text-black/20 transition-colors duration-200 group-hover:text-brand/50">
+                        <span className="mr-5 w-6 shrink-0 text-right text-[12px] font-medium tabular-nums text-black/20 transition-colors duration-300 group-hover:text-brand/50">
                           {String(i + 1).padStart(2, "0")}
                         </span>
 
                         {/* Link text */}
-                        <span className="flex-1 text-[22px] font-semibold tracking-tight text-foreground/85 transition-colors duration-200 group-hover:text-brand">
+                        <span className="flex-1 text-[26px] md:text-[32px] font-display font-medium tracking-tight text-foreground/90 transition-all duration-300 group-hover:text-brand group-hover:translate-x-2">
                           {link.name}
                         </span>
 
                         {/* Arrow icon */}
                         <motion.span
-                          className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-black/8 text-black/30 transition-all duration-200 group-hover:border-brand/30 group-hover:bg-brand/8 group-hover:text-brand"
-                          whileHover={{ x: 2 }}
+                          className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-black/10 text-black/30 transition-all duration-300 group-hover:border-brand/30 group-hover:bg-brand/5 group-hover:text-brand"
+                          whileHover={{ x: 4 }}
                         >
                           <svg
-                            width="13" height="13" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" strokeWidth="2"
+                            width="16" height="16" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" strokeWidth="2.5"
                             strokeLinecap="round" strokeLinejoin="round"
                           >
-                            <path d="M7 17L17 7M17 7H7M17 7v10" />
+                            <path d="M5 12h14M12 5l7 7-7 7" />
                           </svg>
                         </motion.span>
                       </Link>
@@ -330,27 +335,30 @@ export function Header() {
                 <Link
                   href="/contact"
                   onClick={() => setIsMobileMenuOpen(false)}
-                   className="group flex w-full items-center justify-center gap-2.5 rounded-2xl bg-surface py-4 text-sm font-semibold text-white transition-all duration-300 hover:bg-brand hover:shadow-[0_8px_24px_rgba(30,64,175,0.3)]"
+                   className="group relative flex w-full items-center justify-center gap-3 overflow-hidden rounded-full bg-surface py-4.5 text-[15px] font-semibold text-white transition-all duration-300 hover:shadow-[0_8px_24px_rgba(30,64,175,0.3)]"
                 >
-                  <svg
-                    width="15" height="15" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" strokeWidth="2"
-                    strokeLinecap="round" strokeLinejoin="round"
-                  >
-                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.61 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
-                  </svg>
-                  Book A Call
-                  <motion.svg
-                    width="13" height="13" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" strokeWidth="2"
-                    strokeLinecap="round" strokeLinejoin="round"
-                    initial={{ x: 0 }}
-                    whileHover={{ x: 3 }}
-                    transition={{ duration: 0.2 }}
-                    className="transition-transform duration-200 group-hover:translate-x-1"
-                  >
-                    <path d="M5 12h14M12 5l7 7-7 7" />
-                  </motion.svg>
+                  <div className="absolute inset-0 bg-gradient-to-r from-brand-mid to-brand opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                  <span className="relative z-10 flex items-center gap-2">
+                    <svg
+                      width="16" height="16" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" strokeWidth="2"
+                      strokeLinecap="round" strokeLinejoin="round"
+                    >
+                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.61 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+                    </svg>
+                    Book A Call
+                    <motion.svg
+                      width="14" height="14" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" strokeWidth="2.5"
+                      strokeLinecap="round" strokeLinejoin="round"
+                      initial={{ x: 0 }}
+                      whileHover={{ x: 4 }}
+                      transition={{ duration: 0.2 }}
+                      className="ml-1 transition-transform duration-200 group-hover:translate-x-1"
+                    >
+                      <path d="M5 12h14M12 5l7 7-7 7" />
+                    </motion.svg>
+                  </span>
                 </Link>
 
                 <p className="mt-4 text-center text-[11px] leading-relaxed text-black/30">
