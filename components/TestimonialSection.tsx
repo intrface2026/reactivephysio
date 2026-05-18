@@ -1,173 +1,199 @@
 "use client";
 
-import React from "react";
-import Image from "next/image";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 const testimonials = [
   {
     id: 1,
-    name: "Tyler Walker",
-    date: "29 Jan, 2025",
-    text: `"I had an amazing experience from start to finish. The team listened carefully to my needs, offered clear guidance, and delivered results that exceeded my expectations."`,
+    name: "Robert",
+    role: "28 years old, HR analyst",
+    treatment_title: "Condition",
+    treatment: "Wants to recover quickly from a sports injury, but does not have the time to visit clinics daily, making home-care highly profitable.",
+    experience_title: "Experience",
+    experience: "Expects the therapist and the treatment will meet his needs and the recovery will be pleasant and comfortable for reasonable money.",
   },
   {
     id: 2,
-    name: "Sean Kendy",
-    date: "29 Jan, 2025",
-    text: `"Working with this team was a pleasure from beginning to end. They understood my goals, provided expert advice, and delivered results that truly impressed me."`,
+    name: "Thomas",
+    role: "34 years old, Designer",
+    treatment_title: "Condition",
+    treatment: "Looking for premium, personalized care without leaving his studio. Values highly skilled professionals with modern techniques.",
+    experience_title: "Experience",
+    experience: "Expects an individualized plan that fixes his chronic back pain effectively without disrupting his busy daily routine.",
   },
   {
     id: 3,
-    name: "Paul Howard",
-    date: "29 Jan, 2025",
-    text: `"The entire experience was seamless and professional. Their attention to detail, clear communication, and dedication ensured outcomes far beyond what I expected."`,
+    name: "Maria",
+    role: "42 years old, Manager",
+    treatment_title: "Condition",
+    treatment: "Needs gentle but effective joint mobility exercises after a minor surgery. Seeks a trustworthy professional for home visits.",
+    experience_title: "Experience",
+    experience: "Expects clear communication, compassionate care, and a structured recovery timeline that ensures safe rehabilitation.",
   },
+  {
+    id: 4,
+    name: "Sarah",
+    role: "55 years old, Teacher",
+    treatment_title: "Condition",
+    treatment: "Wants to improve overall posture and reduce daily strain from long standing hours. Prefers familiar environments for sessions.",
+    experience_title: "Experience",
+    experience: "Expects the therapist to be patient, provide easy-to-follow exercises, and ensure her daily comfort significantly improves.",
+  },
+  {
+    id: 5,
+    name: "David",
+    role: "30 years old, Developer",
+    treatment_title: "Condition",
+    treatment: "Suffers from severe neck pain due to continuous screen time. Needs immediate and sustainable ergonomic corrections.",
+    experience_title: "Experience",
+    experience: "Expects scientific, evidence-based methods and actionable advice on workstation setup along with pain relief therapies.",
+  }
 ];
 
-function StarRating() {
-  return (
-    <div className="flex gap-1">
-      {[...Array(5)].map((_, i) => (
-        <svg
-          key={i}
-          width="20"
-          height="20"
-          viewBox="0 0 24 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"
-            fill="var(--color-accent)"
-          />
-        </svg>
-      ))}
-    </div>
-  );
-}
-
-function QuoteIcon() {
-  return (
-    <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-[#F2F2F2]">
-      <svg
-        width="24"
-        height="24"
-        viewBox="0 0 60 60"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M19.5 45C13.701 45 9 40.299 9 34.5V30H19.5V15H4.5V34.5C4.5 42.7843 11.2157 49.5 19.5 49.5V45ZM49.5 45C43.701 45 39 40.299 39 34.5V30H49.5V15H34.5V34.5C34.5 42.7843 41.2157 49.5 49.5 49.5V45Z"
-          fill="#232323"
-        />
-      </svg>
-    </div>
-  );
-}
-
-function TestimonialCard({
-  testimonial,
-  delay,
-}: {
-  testimonial: (typeof testimonials)[0];
-  delay: number;
-}) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-50px" }}
-      transition={{ duration: 0.6, delay }}
-      className="flex flex-col rounded-[24px] border border-black/16 p-8"
-    >
-      <QuoteIcon />
-      <div className="mb-4 flex flex-col border-b border-black/16 pb-4">
-        <p className="text-base font-semibold text-surface">
-          {testimonial.name}
-        </p>
-        <div className="my-2 h-px w-full bg-black/16" />
-        <p className="text-xs sm:text-sm font-medium text-[#555555]">{testimonial.date}</p>
-      </div>
-      <p className="mb-6 flex-1 text-xs sm:text-sm md:text-base leading-relaxed text-surface">
-        {testimonial.text}
-      </p>
-      <StarRating />
-    </motion.div>
-  );
-}
-
 export function TestimonialSection() {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % testimonials.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const getCardStyles = (index: number) => {
+    let offset = index - activeIndex;
+    const length = testimonials.length;
+    
+    // Wrap around logic for infinite carousel feel
+    if (offset > Math.floor(length / 2)) {
+      offset -= length;
+    } else if (offset < -Math.floor(length / 2)) {
+      offset += length;
+    }
+
+    if (offset === 0) {
+      return {
+        zIndex: 3,
+        scale: 1,
+        x: "0%",
+        rotateY: 0,
+        opacity: 1,
+        filter: "blur(0px)",
+      };
+    } else if (offset === 1) {
+      return {
+        zIndex: 2,
+        scale: 0.85,
+        x: "105%",
+        rotateY: -20,
+        opacity: 0.8,
+        filter: "blur(2px)",
+      };
+    } else if (offset === -1) {
+      return {
+        zIndex: 2,
+        scale: 0.85,
+        x: "-105%",
+        rotateY: 20,
+        opacity: 0.8,
+        filter: "blur(2px)",
+      };
+    } else {
+      return {
+        zIndex: 1,
+        scale: 0.7,
+        x: offset > 0 ? "150%" : "-150%",
+        rotateY: offset > 0 ? -30 : 30,
+        opacity: 0,
+        filter: "blur(8px)",
+      };
+    }
+  };
+
   return (
-    <section className="w-full bg-white px-6 py-24 md:px-10 md:py-32">
-      <div className="mx-auto w-full max-w-7xl">
-        {/* Two-column layout: LEFT = intro + stat card | RIGHT = 3 testimonials */}
-        <div className="flex flex-col gap-12 lg:flex-row lg:items-start lg:gap-10">
-          {/* ── Left Column ── */}
-          <div className="flex w-full flex-col gap-8 lg:w-[360px] lg:shrink-0">
-            {/* Badge */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.6 }}
-              className="inline-flex w-fit items-center gap-2 rounded-full border border-black/10 px-5 py-2"
-            >
-              <span className="text-accent font-bold">//</span>
-              <span className="text-sm font-semibold tracking-wide text-surface">
-                Testimonials
-              </span>
-            </motion.div>
+    <section className="relative w-full overflow-hidden bg-[#FAFBFF] px-6 py-24 md:py-32 flex justify-center">
+      {/* Decorative ambient background blobs for glassmorphism contrast */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] rounded-full bg-brand/10 blur-[100px]" />
+        <div className="absolute bottom-1/4 right-1/4 w-[600px] h-[600px] rounded-full bg-[#5A87F2]/10 blur-[120px]" />
+      </div>
 
-            {/* Heading */}
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.6, delay: 0.15 }}
-              className="text-[30px] sm:text-[36px] lg:text-[40px] leading-[1.2] font-semibold tracking-tight text-surface"
-            >
-              Happy users says
-              <br />
-              about
-              <br />
-              our company
-            </motion.h2>
-
-            {/* Stat card */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="flex flex-col items-center justify-center rounded-[24px] border border-black/10 px-8 py-10 text-center"
-            >
-              <div className="relative mx-auto mb-6 h-12 w-32">
-                <Image
-                  src="https://framerusercontent.com/images/ARAnvOCepfXCTzIv22gIbhpXA.png"
-                  alt="Happy Customers avatars"
-                  fill
-                  className="object-contain"
-                />
-              </div>
-              <h3 className="text-[28px] font-bold leading-none text-surface md:text-[32px]">
-                3,500<span className="text-accent">+</span>
-              </h3>
-              <p className="mt-1 text-xs sm:text-sm font-medium text-surface/60">Happy customer</p>
-            </motion.div>
-          </div>
-
-          {/* ── Right Column: Testimonial cards ── */}
-          <div className="flex flex-1 flex-col gap-6">
-            {/* Top row: 2 cards side by side */}
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-              <TestimonialCard testimonial={testimonials[0]} delay={0} />
-              <TestimonialCard testimonial={testimonials[1]} delay={0.15} />
-            </div>
-            {/* Bottom: 1 wide card */}
-            <TestimonialCard testimonial={testimonials[2]} delay={0.3} />
-          </div>
+      <div className="relative z-10 max-w-[1200px] w-full flex flex-col items-center">
+        
+        {/* Top Badge */}
+        <div className="bg-white/60 backdrop-blur-md border border-white/40 shadow-sm px-5 py-2 rounded-full mb-12">
+          <span className="text-[13px] font-semibold text-[#4A5568]">// Patient Stories</span>
         </div>
+
+        {/* 3D Carousel Container */}
+        <div 
+          style={{ perspective: 1200 }} 
+          className="relative h-[480px] sm:h-[440px] w-full max-w-[900px] flex justify-center items-center"
+        >
+          {testimonials.map((t, idx) => {
+            const styles = getCardStyles(idx);
+            const isCenter = idx === activeIndex;
+            const initials = t.name.split(" ").map((n) => n[0]).join("");
+
+            return (
+              <motion.div
+                key={t.id}
+                animate={styles}
+                transition={{ type: "spring", stiffness: 150, damping: 15, mass: 0.8 }}
+                className={`absolute w-[90vw] max-w-[360px] bg-white/40 backdrop-blur-xl border border-white/60 rounded-[24px] p-6 sm:p-8 shadow-[0_8px_32px_rgba(0,0,0,0.06)] ${
+                  !isCenter ? "pointer-events-none" : ""
+                }`}
+                style={{ transformStyle: "preserve-3d" }}
+              >
+                {/* Header */}
+                <div className="flex items-center gap-4 mb-6 sm:mb-8 border-b border-black/5 pb-4 sm:pb-6">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-[12px] bg-white/80 backdrop-blur-md shadow-sm border border-white/50 text-[16px] font-bold text-[#5A87F2]">
+                    {initials}
+                  </div>
+                  <div className="flex flex-col justify-center">
+                    <h3 className="text-[20px] font-semibold text-[#1C2024] leading-tight">{t.name}</h3>
+                    <p className="text-[13px] text-[#556275] mt-0.5">{t.role}</p>
+                  </div>
+                </div>
+
+                {/* Motivation Section */}
+                <div className="mb-6">
+                  <h4 className="text-[13px] font-semibold uppercase tracking-wider text-[#6B7A90] mb-2">{t.treatment_title}</h4>
+                  <p className="text-[14px] text-[#2D333E] leading-relaxed font-medium">
+                    {t.treatment}
+                  </p>
+                </div>
+
+                {/* Expectations Section */}
+                <div>
+                  <h4 className="text-[13px] font-semibold uppercase tracking-wider text-[#6B7A90] mb-2">{t.experience_title}</h4>
+                  <p className="text-[14px] text-[#2D333E] leading-relaxed font-medium">
+                    {t.experience}
+                  </p>
+                </div>
+              </motion.div>
+            );
+          })}
+        </div>
+
+        {/* Pagination Dots */}
+        <div className="flex justify-center gap-2.5 mt-8">
+          {testimonials.map((t, idx) => {
+            const isActive = idx === activeIndex;
+            return (
+              <button
+                key={t.id}
+                onClick={() => setActiveIndex(idx)}
+                className={`h-2.5 rounded-full transition-all duration-300 ${
+                  isActive ? "w-8 bg-[#5A87F2]" : "w-2.5 bg-black/10 hover:bg-black/20"
+                }`}
+                aria-label={`Go to slide ${idx + 1}`}
+              />
+            );
+          })}
+        </div>
+
       </div>
     </section>
   );

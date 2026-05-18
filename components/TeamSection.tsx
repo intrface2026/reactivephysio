@@ -36,7 +36,7 @@ export function TeamSection() {
             <div className="relative overflow-hidden rounded-[20px] bg-white p-3 shadow-[0_20px_50px_rgba(0,0,0,0.06)] w-full max-w-[440px] aspect-[4/5]">
               <div className="relative w-full h-full overflow-hidden rounded-[14px] bg-[#fdfaf9]">
                 <Image
-                  src="https://framerusercontent.com/images/cphnFeLljI5C2dQ9FCpjg8HU.png"
+                  src="/Dr.Flaguni_Ambare.jpeg"
                   alt="Dr. Falguni Ambare"
                   fill
                   className="object-cover object-top transition-transform duration-700 ease-out hover:scale-105"

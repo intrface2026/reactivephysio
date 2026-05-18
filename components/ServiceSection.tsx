@@ -91,53 +91,58 @@ export function ServiceSection() {
           </motion.div>
         </div>
 
-        {/* Services Grid */}
-        <div className="grid w-full grid-cols-1 gap-6 md:grid-cols-3">
-          {services.map((service, index) => (
-            <motion.div
-              key={service.title}
-              initial={{ opacity: 0, y: 40, scale: 0.95 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{
-                duration: 0.7,
-                delay: index * 0.2,
-                ease: "easeOut",
-              }}
-              className="group relative h-[450px] w-full overflow-hidden rounded-[20px] md:h-[550px] lg:h-[600px]"
-            >
-              <Link href={service.link} className="block h-full w-full">
-                {/* Background Image */}
-                <Image
-                  src={service.image}
-                  alt={service.title}
-                  fill
-                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                />
+        {/* Services Card Stack */}
+        <div className="relative flex flex-col gap-8 w-full max-w-5xl mx-auto mt-12 pb-24">
+          {services.map((service, index) => {
+            return (
+              <motion.div
+                key={service.title}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ margin: "-50px" }}
+                transition={{
+                  duration: 0.6,
+                  ease: "easeOut",
+                }}
+                className="group relative h-[450px] w-full overflow-hidden rounded-[32px] md:h-[500px] shadow-[0_20px_40px_rgba(0,0,0,0.08)] sticky border border-black/5 origin-top"
+                style={{
+                  top: `calc(120px + ${index * 30}px)`,
+                }}
+                whileHover={{ scale: 1.02, transition: { duration: 0.4, ease: "easeOut" } }}
+              >
+                <Link href={service.link} className="block h-full w-full">
+                  {/* Background Image */}
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    fill
+                    className="object-cover transition-transform duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-[1.05]"
+                  />
 
-                {/* Gradient Overlay */}
-                <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent opacity-80 transition-opacity duration-500 group-hover:opacity-100" />
+                  {/* Gradient Overlay */}
+                  <div className="absolute inset-0 bg-linear-to-t from-black/95 via-black/50 to-black/10 opacity-80 transition-opacity duration-500 group-hover:opacity-90" />
 
-                {/* Content */}
-                <div className="absolute inset-x-0 bottom-0 flex flex-col justify-end p-6 text-white md:p-8 z-10">
-                  <h6 className="mb-2 text-[20px] sm:text-[22px] leading-snug font-bold">
-                    {service.title}
-                  </h6>
-                  <p className="text-xs sm:text-sm font-medium text-white/80">
-                    {service.description}
-                  </p>
-                  
-                  {/* Modern interactive slide-up badge */}
-                  <div className="mt-5 flex items-center gap-2 text-xs sm:text-sm font-semibold text-accent opacity-0 translate-y-3 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">
-                    <span>Explore Service</span>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="transition-transform duration-300 group-hover:translate-x-1.5">
-                      <path d="M5 12h14M12 5l7 7-7 7" />
-                    </svg>
+                  {/* Content */}
+                  <div className="absolute inset-x-0 bottom-0 flex flex-col justify-end p-8 md:p-12 text-white z-10">
+                    <h6 className="mb-3 text-[24px] sm:text-[32px] md:text-[40px] leading-tight font-bold tracking-tight">
+                      {service.title}
+                    </h6>
+                    <p className="text-sm sm:text-base font-medium text-white/80 max-w-2xl leading-relaxed">
+                      {service.description}
+                    </p>
+                    
+                    {/* Modern interactive slide-up badge */}
+                    <div className="mt-6 flex items-center gap-2 text-sm font-semibold text-brand-start opacity-0 translate-y-4 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0">
+                      <span>Explore Service</span>
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="transition-transform duration-300 group-hover:translate-x-2">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                      </svg>
+                    </div>
                   </div>
-                </div>
-              </Link>
-            </motion.div>
-          ))}
+                </Link>
+              </motion.div>
+            );
+          })}
         </div>
 
         {/* Mobile Button */}
