@@ -5,6 +5,31 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence, useReducedMotion, type Variants } from "framer-motion";
 import { usePathname } from "next/navigation";
+import {
+  Home,
+  Info,
+  Activity,
+  BookOpen,
+  CreditCard,
+  FileText,
+  UserPlus,
+  Mail,
+  LogIn,
+} from "lucide-react";
+
+const getLinkIcon = (name: string) => {
+  const n = name.toLowerCase();
+  if (n.includes("home")) return <Home className="h-[18px] w-[18px]" />;
+  if (n.includes("about")) return <Info className="h-[18px] w-[18px]" />;
+  if (n.includes("service")) return <Activity className="h-[18px] w-[18px]" />;
+  if (n.includes("case")) return <BookOpen className="h-[18px] w-[18px]" />;
+  if (n.includes("price")) return <CreditCard className="h-[18px] w-[18px]" />;
+  if (n.includes("blog")) return <FileText className="h-[18px] w-[18px]" />;
+  if (n.includes("physio") || n.includes("patient")) return <UserPlus className="h-[18px] w-[18px]" />;
+  if (n.includes("contact")) return <Mail className="h-[18px] w-[18px]" />;
+  if (n.includes("portal")) return <LogIn className="h-[18px] w-[18px]" />;
+  return <Info className="h-[18px] w-[18px]" />;
+};
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Data
@@ -54,22 +79,26 @@ const overlayVariants: Variants = {
 
 const panelVariants: Variants = {
   closed: {
-    clipPath: "inset(0% 0% 100% 0% round 0px)",
+    opacity: 0,
+    y: -12,
+    scale: 0.95,
     transition: {
-      duration: 0.42,
-      ease: [0.76, 0, 0.24, 1],
+      duration: 0.2,
+      ease: "easeInOut",
       when: "afterChildren",
       staggerChildren: 0,
     },
   },
   open: {
-    clipPath: "inset(0% 0% 0% 0% round 0px)",
+    opacity: 1,
+    y: 0,
+    scale: 1,
     transition: {
-      duration: 0.52,
-      ease: [0.76, 0, 0.24, 1],
+      duration: 0.35,
+      ease: [0.16, 1, 0.3, 1],
       when: "beforeChildren",
-      staggerChildren: 0.055,
-      delayChildren: 0.1,
+      staggerChildren: 0.04,
+      delayChildren: 0.05,
     },
   },
 };
@@ -231,18 +260,19 @@ export function Header() {
               initial="closed"
               animate="open"
               exit="closed"
-              className="fixed inset-0 z-40 bg-black/30 backdrop-blur-sm"
+              className="fixed inset-0 z-40 bg-black/20 md:bg-black/5 backdrop-blur-xs md:backdrop-blur-none"
               onClick={() => setIsMobileMenuOpen(false)}
             />
 
-            {/* Full-screen panel — clips open from top */}
+            {/* Dropdown panel - responsive layout */}
             <motion.div
               key="mobile-panel"
               variants={panelVariants}
               initial="closed"
               animate="open"
               exit="closed"
-              className="fixed inset-0 z-50 flex flex-col overflow-hidden bg-white/95 backdrop-blur-2xl"
+              className="fixed z-50 flex flex-col overflow-hidden bg-white/95 backdrop-blur-2xl md:bg-white/90 md:backdrop-blur-xl md:border md:border-black/[0.08] md:shadow-[0_24px_60px_-15px_rgba(0,0,0,0.15)]
+                inset-0 md:inset-auto md:top-[88px] md:right-12 md:w-[380px] md:h-auto md:max-h-[calc(100vh-120px)] md:rounded-[28px]"
             >
               {/* Premium Slant Lines overlay (optional) */}
               <div className="absolute inset-0 pointer-events-none opacity-[0.03]" style={{
@@ -272,7 +302,7 @@ export function Header() {
               {/* Panel header */}
               <motion.div
                 variants={linkItemVariants}
-                className="flex items-center justify-between border-b border-black/5 px-6 py-5 shrink-0"
+                className="flex items-center justify-between border-b border-black/5 px-6 py-5 shrink-0 md:hidden"
               >
                 <Link
                   href="/"
@@ -306,15 +336,16 @@ export function Header() {
               </motion.div>
 
               {/* Navigation links */}
-              <nav className="flex flex-1 flex-col overflow-y-auto px-6 py-8">
+              <nav className="flex flex-1 flex-col overflow-y-auto px-6 py-8 md:px-5 md:py-6">
                 <motion.p
                   variants={linkItemVariants}
-                  className="mb-6 text-[10px] font-semibold uppercase tracking-[0.14em] text-black/30"
+                  className="mb-6 text-[10px] font-semibold uppercase tracking-[0.14em] text-black/30 md:mb-4"
                 >
                   Navigation
                 </motion.p>
 
-                <div className="flex flex-col">
+                {/* Mobile Link List */}
+                <div className="flex flex-col md:hidden">
                   {mobileLinks.map((link, i) => (
                     <motion.div key={link.name} variants={linkItemVariants}>
                       <Link
@@ -352,44 +383,44 @@ export function Header() {
                     </motion.div>
                   ))}
                 </div>
+
+                {/* Desktop Redesigned Grid Menu */}
+                <div className="hidden md:flex flex-col gap-1">
+                  {mobileLinks.map((link) => (
+                    <motion.div key={link.name} variants={linkItemVariants}>
+                      <Link
+                        href={link.href}
+                        onClick={() => {
+                          setActiveLink(link.name);
+                          setIsMobileMenuOpen(false);
+                        }}
+                        className="group flex items-center gap-3.5 rounded-[16px] p-2.5 text-sm font-semibold text-slate-800 transition-all hover:bg-zinc-100/60 hover:text-brand border border-transparent"
+                      >
+                        <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-slate-50 text-slate-500 transition-colors group-hover:bg-brand-start/10 group-hover:text-brand-start">
+                          {getLinkIcon(link.name)}
+                        </span>
+                        <span className="flex-1 tracking-tight">
+                          {link.name}
+                        </span>
+                      </Link>
+                    </motion.div>
+                  ))}
+                </div>
               </nav>
 
               {/* Panel footer */}
               <motion.div
                 variants={footerVariants}
-                className="shrink-0 border-t border-black/6 px-6 pb-8 pt-5"
+                className="shrink-0 border-t border-black/6 px-6 pb-6 pt-4 text-center md:px-5 md:pb-5 md:pt-4"
               >
-                <Link
-                  href="/contact"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                   className="group relative flex w-full items-center justify-center gap-3 overflow-hidden rounded-full bg-surface py-4.5 text-[15px] font-semibold text-white transition-all duration-300 hover:shadow-[0_8px_24px_rgba(30,64,175,0.3)]"
-                >
-                  <div className="absolute inset-0 bg-gradient-to-r from-brand-mid to-brand opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                  <span className="relative z-10 flex items-center gap-2">
-                    <svg
-                      width="16" height="16" viewBox="0 0 24 24" fill="none"
-                      stroke="currentColor" strokeWidth="2"
-                      strokeLinecap="round" strokeLinejoin="round"
-                    >
-                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.61 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
-                    </svg>
-                    Book A Call
-                    <motion.svg
-                      width="14" height="14" viewBox="0 0 24 24" fill="none"
-                      stroke="currentColor" strokeWidth="2.5"
-                      strokeLinecap="round" strokeLinejoin="round"
-                      initial={{ x: 0 }}
-                      whileHover={{ x: 4 }}
-                      transition={{ duration: 0.2 }}
-                      className="ml-1 transition-transform duration-200 group-hover:translate-x-1"
-                    >
-                      <path d="M5 12h14M12 5l7 7-7 7" />
-                    </motion.svg>
-                  </span>
-                </Link>
-
-                <p className="mt-4 text-center text-[11px] leading-relaxed text-black/30">
-                  Professional physiotherapy — tailored for you
+                <p className="text-[12px] font-semibold text-slate-800">
+                  Reactive Physical Therapy
+                </p>
+                <p className="mt-1 text-[11px] text-black/40">
+                  Nagpur, MH • info@reactivephysicaltherapy.com
+                </p>
+                <p className="mt-1.5 text-[10px] uppercase tracking-wider text-black/20 font-bold">
+                  Professional care, tailored for you
                 </p>
               </motion.div>
             </motion.div>
