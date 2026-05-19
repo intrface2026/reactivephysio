@@ -4,6 +4,7 @@ import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence, useReducedMotion, type Variants } from "framer-motion";
+import { usePathname } from "next/navigation";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Data
@@ -18,7 +19,9 @@ const pagesLinks = [
   { name: "Services", href: "/services" },
   { name: "Case Studies", href: "/case-studies" },
   { name: "Pricing", href: "/pricing" },
+  { name: "Careers", href: "/careers" },
   { name: "Contact", href: "/contact" },
+  { name: "Client Portal", href: "https://portal.reactivephysicaltherapy.com" },
 ];
 
 const allMobileLinks = [
@@ -28,7 +31,9 @@ const allMobileLinks = [
   { name: "Case Studies", href: "/case-studies" },
   { name: "Pricing", href: "/pricing" },
   { name: "Blogs", href: "/blog" },
+  { name: "Join as a Physio", href: "/careers" },
   { name: "Contact", href: "/contact" },
+  { name: "Client Portal", href: "https://portal.reactivephysicaltherapy.com" },
 ];
 
 // All desktop link keys in order (for the floating pill)
@@ -96,11 +101,23 @@ const footerVariants: Variants = {
 // ─────────────────────────────────────────────────────────────────────────────
 
 export function Header() {
+  const pathname = usePathname();
   const [hoveredLink, setHoveredLink] = useState<string | null>(null);
   const [isPagesOpen, setIsPagesOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeLink, setActiveLink] = useState<string | null>(null);
+
+  const isCareersPage = pathname === "/careers";
+  const mobileLinks = allMobileLinks.map(link => {
+    if (link.href === "/careers") {
+      return {
+        name: isCareersPage ? "Join as a Patient" : "Join as a Physio",
+        href: isCareersPage ? "https://portal.reactivephysicaltherapy.com/register?role=patient" : "/careers"
+      };
+    }
+    return link;
+  });
   const pagesTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
   const shouldReduceMotion = useReducedMotion();
 
@@ -157,7 +174,17 @@ export function Header() {
           </Link>
 
           {/* ── Right Side ── */}
-          <div className="flex items-center">
+          <div className="flex items-center gap-4">
+            <Link
+              href={isCareersPage ? "https://portal.reactivephysicaltherapy.com/register?role=patient" : "/careers"}
+              className={`hidden md:inline-flex items-center justify-center rounded-full border px-5 py-2.5 text-xs font-bold uppercase tracking-widest transition-all duration-300 ${
+                scrolled
+                  ? "border-brand-start/20 bg-gradient-to-r from-brand-start to-brand-end text-white hover:opacity-95 shadow-sm"
+                  : "border-black/10 bg-white/40 hover:bg-white/60 text-slate-800"
+              }`}
+            >
+              {isCareersPage ? "Join as a Patient" : "Join as a Physio"}
+            </Link>
             {/* Hamburger — animated to X */}
             <motion.button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -288,7 +315,7 @@ export function Header() {
                 </motion.p>
 
                 <div className="flex flex-col">
-                  {allMobileLinks.map((link, i) => (
+                  {mobileLinks.map((link, i) => (
                     <motion.div key={link.name} variants={linkItemVariants}>
                       <Link
                         href={link.href}

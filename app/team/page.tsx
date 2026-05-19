@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { CalendarCheck } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Meet the Founder – Reactive | Lead Physiotherapist Dr. Falguni Ambare",
@@ -86,12 +87,10 @@ export default function TeamPage() {
                 </div>
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-2 rounded-full bg-linear-to-r from-brand-start to-brand-end px-8 py-4 text-sm font-semibold text-white shadow-md transition-all hover:scale-[1.02] hover:shadow-[0_8px_24px_rgba(25,79,162,0.25)]"
+                  className="inline-flex items-center gap-2 rounded-full bg-linear-to-r from-brand-start to-brand-end px-8 py-4 text-sm font-semibold text-white shadow-md transition-all hover:shadow-[0_8px_24px_rgba(25,79,162,0.25)]"
                 >
-                  Book an Assessment
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M5 12h14M12 5l7 7-7 7" />
-                  </svg>
+                  <CalendarCheck className="h-4 w-4 text-accent" />
+                  <span>Book an Assessment</span>
                 </Link>
               </div>
             </div>

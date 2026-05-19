@@ -6,6 +6,8 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { AnimatedButton } from "./AnimatedButton";
 
+import { Activity } from "lucide-react";
+
 const services = [
   {
     title: "Physiotherapy - Musculoskeletal",
@@ -103,9 +105,10 @@ export function ServiceSection() {
             className="hidden md:block"
           >
             <AnimatedButton
-              href="/service"
+              href="/services"
               text="All Services"
-              className="bg-linear-to-r from-brand-start to-brand-end hover:brightness-110 text-white font-semibold shadow-md transition-all hover:shadow-[0_8px_24px_rgba(25,79,162,0.2)] hover:scale-[1.02]"
+              className="bg-linear-to-r from-brand-start to-brand-end hover:brightness-110 text-white font-semibold shadow-md transition-all hover:shadow-[0_8px_24px_rgba(25,79,162,0.2)]"
+              icon={<Activity className="h-4 w-4" />}
             />
           </motion.div>
         </div>
@@ -190,9 +193,10 @@ export function ServiceSection() {
           className="mt-4 md:hidden"
         >
           <AnimatedButton
-            href="/service"
+            href="/services"
             text="All Services"
             className="bg-linear-to-r from-brand-start to-brand-end hover:brightness-110 text-white font-semibold shadow-md transition-all hover:shadow-[0_8px_24px_rgba(25,79,162,0.2)]"
+            icon={<Activity className="h-4 w-4" />}
           />
         </motion.div>
       </div>

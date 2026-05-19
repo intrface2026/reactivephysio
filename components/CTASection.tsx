@@ -2,87 +2,126 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { AnimatedButton } from "./AnimatedButton";
-import Image from "next/image";
+import { Calendar, UserCheck, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 export function CTASection() {
   return (
-    <section className="w-full bg-zinc-50 px-6 py-12 pb-24 md:px-10 md:pb-32 md:pt-16">
+    <section className="w-full bg-zinc-50 px-6 py-16 pb-24 md:px-10 md:pb-32">
       <div className="mx-auto w-full max-w-7xl">
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="relative flex flex-col items-center overflow-hidden rounded-[40px] bg-zinc-950 px-6 py-20 text-center md:px-16 md:py-32 lg:px-24"
-        >
-          {/* Premium Ambient Glow Effects */}
-          <div className="pointer-events-none absolute left-[-10%] top-[-20%] h-[500px] w-[500px] rounded-full bg-brand-start/20 blur-[120px]" />
-          <div className="pointer-events-none absolute bottom-[-20%] right-[-10%] h-[500px] w-[500px] rounded-full bg-brand-end/20 blur-[120px]" />
+        
+        {/* Section Header */}
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="mb-6 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white px-5 py-2 shadow-xs"
+          >
+            <span className="text-brand-start font-bold">//</span>
+            <span className="text-xs sm:text-sm font-semibold tracking-wide text-zinc-700 uppercase tracking-widest">
+              Take the first step
+            </span>
+          </motion.div>
+
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-[28px] sm:text-[36px] lg:text-[42px] font-semibold tracking-tight text-zinc-900 leading-[1.2]"
+          >
+            Ready to start your journey?
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="mt-4 text-xs sm:text-sm md:text-base text-zinc-500 leading-relaxed max-w-2xl mx-auto"
+          >
+            Whether you are seeking expert home physical therapy as a patient or looking to grow your clinical practice as a provider, select your path below.
+          </motion.p>
+        </div>
+
+        {/* Dual Conversion Cards */}
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:gap-12">
           
-          <div className="pointer-events-none absolute inset-0 bg-[url('https://framerusercontent.com/images/noise.png')] opacity-[0.03] mix-blend-overlay" />
+          {/* Patient Card */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="group relative overflow-hidden rounded-[32px] border border-zinc-800 bg-zinc-950 p-8 sm:p-10 flex flex-col justify-between gap-8 min-h-[300px] shadow-lg"
+          >
+            {/* Watermark Icon */}
+            <div className="absolute right-8 top-8 opacity-[0.03] text-white transition-transform duration-500 group-hover:scale-105 pointer-events-none select-none">
+              <Calendar className="h-32 w-32" />
+            </div>
+            {/* Glow */}
+            <div className="absolute -bottom-20 -left-20 h-48 w-48 rounded-full bg-brand-start/15 blur-[60px] pointer-events-none" />
 
-          {/* Content */}
-          <div className="relative z-10 flex max-w-3xl flex-col items-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="mb-8 inline-flex items-center gap-2 rounded-full border border-zinc-800 bg-zinc-900/50 px-5 py-2 backdrop-blur-md"
-            >
-              <span className="text-accent font-bold">//</span>
-              <span className="text-sm font-semibold tracking-wide text-zinc-300 uppercase tracking-widest">
-                Take the first step
+            <div className="relative z-10">
+              <span className="text-[10px] font-bold tracking-widest uppercase text-brand-start">
+                For Clients &amp; Patients
               </span>
-            </motion.div>
-
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="mb-6 text-[36px] leading-[1.1] font-bold tracking-tight text-white sm:text-[48px] lg:text-[56px]"
+              <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-white mt-3">
+                Restore your health at home
+              </h3>
+              <p className="text-zinc-400 text-sm mt-3 leading-relaxed max-w-sm">
+                Connect with verified physical therapists delivering personalized, evidence-based care directly to your door in Nagpur.
+              </p>
+            </div>
+            
+            <Link
+              href="https://portal.reactivephysicaltherapy.com/register?role=patient"
+              className="relative z-10 inline-flex items-center justify-center gap-2.5 self-start rounded-full bg-white px-8 py-4 text-sm font-bold !text-black transition-colors hover:bg-zinc-200 w-full sm:w-auto"
             >
-              Ready to start your <br className="hidden md:block" />
-              <span className="bg-gradient-to-r from-brand-start to-brand-end bg-clip-text text-transparent">recovery journey?</span>
-            </motion.h2>
+              <Calendar className="h-4.5 w-4.5" />
+              <span>Book an Appointment</span>
+            </Link>
+          </motion.div>
 
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="mb-10 max-w-xl text-base text-zinc-400 md:text-lg"
-            >
-              Our expert team is here to guide you back to optimal health with personalized, evidence-based physiotherapy.
-            </motion.p>
+          {/* Provider Card */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="group relative overflow-hidden rounded-[32px] border border-zinc-800 bg-zinc-950 p-8 sm:p-10 flex flex-col justify-between gap-8 min-h-[300px] shadow-lg"
+          >
+            {/* Watermark Icon */}
+            <div className="absolute right-8 top-8 opacity-[0.03] text-white transition-transform duration-500 group-hover:scale-105 pointer-events-none select-none">
+              <UserCheck className="h-32 w-32" />
+            </div>
+            {/* Glow */}
+            <div className="absolute -bottom-20 -left-20 h-48 w-48 rounded-full bg-accent/15 blur-[60px] pointer-events-none" />
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="flex flex-col sm:flex-row items-center gap-4"
+            <div className="relative z-10">
+              <span className="text-[10px] font-bold tracking-widest uppercase text-accent">
+                For Physiotherapists
+              </span>
+              <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-white mt-3">
+                Grow your caseload with freedom
+              </h3>
+              <p className="text-zinc-400 text-sm mt-3 leading-relaxed max-w-sm">
+                Join our premium home care network in Nagpur. Earn top rates, choose your schedule, and access secure, hassle-free billing.
+              </p>
+            </div>
+            
+            <Link
+              href="/careers"
+              className="relative z-10 inline-flex items-center justify-center gap-2.5 self-start rounded-full border border-zinc-700 bg-transparent px-8 py-4 text-sm font-bold text-white transition-all hover:border-zinc-500 hover:bg-zinc-900 w-full sm:w-auto"
             >
-              <AnimatedButton
-                href="/contact"
-                text="Book Appointment"
-                className="bg-white !text-zinc-950 hover:bg-zinc-200 transition-all hover:scale-[1.02] px-8 py-4 text-base font-bold w-full sm:w-auto"
-              />
-              <Link 
-                href="/services" 
-                className="group flex items-center justify-center gap-2 rounded-full border border-zinc-700 bg-transparent px-8 py-4 text-base font-bold text-white transition-all hover:border-zinc-500 hover:bg-zinc-800 w-full sm:w-auto"
-              >
-                Explore Services
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" className="transition-transform group-hover:translate-x-1">
-                  <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </Link>
-            </motion.div>
-          </div>
-        </motion.div>
+              <UserCheck className="h-4.5 w-4.5" />
+              <span>Join Nagpur's Elite PT Network</span>
+            </Link>
+          </motion.div>
+
+        </div>
+
       </div>
     </section>
   );

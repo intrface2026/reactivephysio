@@ -5,8 +5,8 @@ import { motion } from "framer-motion";
 
 const features = [
   "Personalized treatment plans tailored for each patient",
-  "Modern equipment and advanced techniques",
-  "Comfortable clinic environment with private rooms",
+  "Dual-OTP session verification ensuring absolute billing and attendance transparency",
+  "Verified & background-checked physiotherapists for secure in-home care",
   "Trusted by athletes, professionals, and families",
 ];
 

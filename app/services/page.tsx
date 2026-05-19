@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { CalendarCheck } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Our Services – Reactive | Home-Based Physiotherapy",
@@ -170,12 +171,10 @@ export default function ServicesPage() {
           </div>
           <Link
             href="/contact"
-            className="shrink-0 inline-flex items-center gap-2 rounded-full bg-surface px-8 py-4 text-sm font-semibold text-white shadow-md transition-all hover:scale-[1.02] hover:brightness-110"
+            className="shrink-0 inline-flex items-center gap-2 rounded-full bg-surface px-8 py-4 text-sm font-semibold text-white shadow-md transition-all hover:brightness-110"
           >
-            Book Free Consult
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M5 12h14M12 5l7 7-7 7" />
-            </svg>
+            <CalendarCheck className="h-4 w-4 text-accent" />
+            <span>Book Free Consult</span>
           </Link>
         </div>
       </section>

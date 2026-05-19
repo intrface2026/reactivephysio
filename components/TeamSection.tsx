@@ -5,6 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
+import { Mail } from "lucide-react";
+
 export function TeamSection() {
   return (
     <section className="w-full bg-[#f8f8f8] px-6 py-24 md:px-10 md:py-32 overflow-hidden relative">
@@ -127,11 +129,10 @@ export function TeamSection() {
             >
               <Link
                 href="/contact"
-                className="group inline-flex items-center gap-3 rounded-full bg-surface px-8 py-4 text-sm font-semibold text-white transition-all duration-300 hover:bg-linear-to-r hover:from-brand-start hover:to-brand-end hover:shadow-[0_8px_24px_rgba(25,79,162,0.25)] hover:scale-[1.02]"
+                className="group inline-flex items-center gap-3 rounded-full bg-surface px-8 py-4 text-sm font-semibold text-white transition-all duration-300 hover:bg-linear-to-r hover:from-brand-start hover:to-brand-end hover:shadow-[0_8px_24px_rgba(25,79,162,0.25)]"
               >
-                <span className="text-accent group-hover:text-white transition-colors">//</span>
+                <Mail className="h-4 w-4 text-accent group-hover:text-white transition-colors" />
                 <span>Get in Touch</span>
-                <span className="text-accent group-hover:text-white transition-colors">//</span>
               </Link>
 
               {/* Social icons */}

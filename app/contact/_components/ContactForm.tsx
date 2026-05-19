@@ -152,7 +152,7 @@ export default function ContactForm() {
         <button
           type="submit"
           disabled={state === "loading"}
-          className="group relative mt-2 inline-flex items-center justify-center gap-2.5 overflow-hidden rounded-full bg-linear-to-r from-brand-start to-brand-end px-8 py-4 text-sm font-semibold text-white shadow-[0_8px_24px_rgba(25,79,162,0.2)] transition-all hover:shadow-[0_12px_32px_rgba(25,79,162,0.3)] hover:scale-[1.01] disabled:opacity-60 cursor-pointer"
+          className="group relative mt-2 inline-flex items-center justify-center gap-2.5 overflow-hidden rounded-full bg-linear-to-r from-brand-start to-brand-end px-8 py-4 text-sm font-semibold text-white shadow-[0_8px_24px_rgba(25,79,162,0.2)] transition-all hover:shadow-[0_12px_32px_rgba(25,79,162,0.3)] disabled:opacity-60 cursor-pointer"
         >
           <span className="absolute inset-0 translate-x-[-100%] skew-x-[-18deg] bg-white/20 transition-transform duration-500 group-hover:translate-x-[200%]" aria-hidden />
           <span className="relative z-10">

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { AnimatedButton } from "@/components/AnimatedButton";
+import { CalendarCheck } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "About Us – Reactive | Expert Home-Based Physiotherapy",
@@ -69,7 +70,7 @@ export default function AboutPage() {
       <section className="relative w-full min-h-[70vh] flex items-end overflow-hidden bg-surface">
         <div className="absolute inset-0">
           <Image
-            src="https://framerusercontent.com/images/xsHrPTPeNjbWr67tG8wdR5p0jTo.jpg"
+            src="/about_reactive.png"
             alt="Physiotherapy session"
             fill
             className="object-cover opacity-40"
@@ -123,11 +124,11 @@ export default function AboutPage() {
             <p className="text-xs sm:text-sm md:text-base text-surface/60 leading-relaxed mb-10">
               Today, we deliver premium home-based physiotherapy and movement training across Nagpur, specializing in science-based pain relief, post-surgical rehab, posture correction, and prenatal/postnatal pelvic health care.
             </p>
-            <AnimatedButton href="/contact" text="Book a Consultation" className="bg-linear-to-r from-brand-start to-brand-end hover:shadow-[0_8px_24px_rgba(25,79,162,0.25)] hover:scale-[1.02] text-white transition-all duration-300 border-0" />
+            <AnimatedButton href="/contact" text="Book a Consultation" className="bg-linear-to-r from-brand-start to-brand-end hover:shadow-[0_8px_24px_rgba(25,79,162,0.25)] text-white transition-all duration-300 border-0" icon={<CalendarCheck className="h-4 w-4" />} />
           </div>
           <div className="relative w-full lg:w-1/2 aspect-[4/3] overflow-hidden rounded-[24px]">
             <Image
-              src="https://framerusercontent.com/images/Vmy87hcbosCsXxs567jrjv34cMs.jpg"
+              src="/about-reactive-carousel.png"
               alt="Our vision and execution"
               fill
               className="object-cover"
@@ -171,7 +172,7 @@ export default function AboutPage() {
             <div className="relative overflow-hidden rounded-[20px] bg-[#fcf9f8] p-3 shadow-[0_20px_50px_rgba(0,0,0,0.05)] w-full max-w-[420px] aspect-[4/5] mx-auto lg:mx-0">
               <div className="relative w-full h-full overflow-hidden rounded-[14px]">
                 <Image
-                  src="https://framerusercontent.com/images/cphnFeLljI5C2dQ9FCpjg8HU.png"
+                  src="/Dr.Flaguni_Ambare.jpeg"
                   alt="Dr. Falguni Ambare"
                   fill
                   className="object-cover object-top"
@@ -225,7 +226,7 @@ export default function AboutPage() {
           <p className="max-w-lg text-white/70 text-xs sm:text-sm leading-relaxed">
             Book your initial home assessment today and we will create a personalised plan to get you moving again.
           </p>
-          <AnimatedButton href="/contact" text="Book A Call" className="bg-white hover:bg-white/95 text-surface transition-all border-0 shadow-md hover:scale-[1.02]" />
+          <AnimatedButton href="/contact" text="Book A Call" className="bg-white hover:bg-white/95 !text-black transition-all border-0 shadow-md" icon={<CalendarCheck className="h-4 w-4 text-black" />} />
         </div>
       </section>
     </main>

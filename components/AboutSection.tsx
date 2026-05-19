@@ -154,9 +154,9 @@ export function AboutSection() {
             </div>
 
             {/* Card Text & Indicator Column */}
-            <div className="flex flex-col justify-between p-6 md:p-8 flex-1 min-h-[220px] md:min-h-0">
-              <div className="relative h-[190px] sm:h-[150px] md:h-[180px] w-full">
-                <AnimatePresence initial={false} custom={direction}>
+            <div className="flex flex-col justify-between p-6 md:p-8 flex-1">
+              <div className="relative w-full min-h-[190px] sm:min-h-[150px] md:min-h-[180px]">
+                <AnimatePresence mode="wait" initial={false} custom={direction}>
                   <motion.div
                     key={index}
                     custom={direction}
@@ -164,8 +164,8 @@ export function AboutSection() {
                     initial="enter"
                     animate="center"
                     exit="exit"
-                    transition={{ duration: 0.5, ease: "easeInOut" }}
-                    className="absolute inset-0 flex flex-col gap-2"
+                    transition={{ duration: 0.3, ease: "easeInOut" }}
+                    className="flex flex-col gap-2 w-full"
                   >
                     <span className="text-xs font-bold bg-linear-to-r from-brand-start to-brand-end bg-clip-text text-transparent uppercase tracking-widest leading-none">
                       {slides[index].subtitle}
