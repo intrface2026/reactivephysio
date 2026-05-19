@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
+
 import { motion } from "framer-motion";
 import { AnimatedButton } from "./AnimatedButton";
 
@@ -63,7 +63,7 @@ export function HeroSection() {
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
           className="max-w-2xl text-sm sm:text-base md:text-lg text-slate-500 font-medium leading-relaxed"
         >
-          Quality physiotherapy can happen right at home. Reactive is a premium home-based physiotherapy and movement studio in Nagpur delivering expert, science-driven care straight to your doorstep.
+          Quality physiotherapy can happen right at home. Reactive is a premium home-based physiotherapy and movement studio in Nagpur, delivering expert care across Ramdaspeth, Dharampeth, Pratap Nagar, and surrounding areas straight to your doorstep.
         </motion.p>
 
         {/* Action Button */}
@@ -78,29 +78,6 @@ export function HeroSection() {
             className="bg-gradient-to-r from-brand-start to-brand-end text-white px-9 py-4 sm:px-11 sm:py-4.5 rounded-full text-sm sm:text-base font-bold shadow-lg transition-all hover:shadow-[0_8px_28px_rgba(30,64,175,0.3)] hover:scale-[1.03]"
             iconSrc=""
           />
-        </motion.div>
-      </div>
-
-      {/* ─── Single Premium Hero Image ────────────────────────── */}
-      <div className="relative z-10 mx-auto mt-16 max-w-[1200px] px-6 md:px-10 lg:mt-24">
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-          className="relative w-full aspect-[4/3] md:aspect-[21/9] overflow-hidden rounded-[32px] bg-slate-100 shadow-[0_8px_40px_rgba(0,0,0,0.08)] ring-1 ring-black/5 dark:bg-slate-900 dark:ring-white/10"
-        >
-          <Image
-            src="https://framerusercontent.com/images/Vmy87hcbosCsXxs567jrjv34cMs.jpg"
-            alt="Expert physiotherapy manual therapy session in Nagpur"
-            fill
-            sizes="(max-width: 1200px) 100vw, 1200px"
-            className="object-cover object-center filter brightness-[0.95]"
-            priority={true}
-          />
-          {/* Subtle artistic overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 via-transparent to-transparent pointer-events-none" />
-          <div className="absolute inset-0 bg-brand/5 mix-blend-overlay pointer-events-none" />
         </motion.div>
       </div>
     </section>

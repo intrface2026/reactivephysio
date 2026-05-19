@@ -5,57 +5,49 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Our Services – Reactive | Home-Based Physiotherapy",
   description:
-    "Explore our comprehensive range of home-based physiotherapy services in Nagpur including science-based pain relief, personalized rehab, sports rehab, and ANC-PNC care.",
+    "Explore our comprehensive range of home-based physiotherapy services in Nagpur including musculoskeletal, neuro, ANC/PNC care, functional training, and geriatric care.",
 };
 
 const services = [
   {
-    title: "Science-based Physiotherapy & Pain Relief",
-    slug: "physiotherapy-pain-relief",
+    title: "Physiotherapy - Musculoskeletal",
+    slug: "physiotherapy-muskulo",
     description:
-      "Evidence-backed care to target pain, reduce inflammation, and restore natural movement patterns using drug-free, modern techniques right in your home.",
-    image: "https://framerusercontent.com/images/3ReT5xeX5z4tvOwGXq4uK0APU4.jpg",
-    tags: ["Pain Relief", "Evidence-Based", "Drug-Free"],
+      "Expert care for muscle and joint pain, focusing on mobility and strength recovery.",
+    image: "/images/muskulo_physio.png",
+    tags: ["Pain Relief", "Mobility", "Strength"],
   },
   {
-    title: "Personalised Rehab & Post-Rehabilitation",
-    slug: "personalised-rehab-post-rehabilitation",
+    title: "Physiotherapy - Neuro",
+    slug: "physiotherapy-neuro",
     description:
-      "Tailored recovery programs designed to safely guide you back to full function, strength, and mobility after injury or surgical procedures.",
-    image: "https://framerusercontent.com/images/x9BbpMW2l1ETXjm885q6jCtWRYc.jpg",
-    tags: ["Rehabilitation", "Post-Surgical", "Recovery"],
+      "Specialized neurological rehabilitation to restore movement, balance, and function.",
+    image: "/images/neuro_physio.png",
+    tags: ["Neurology", "Rehab", "Balance"],
   },
   {
-    title: "Strength & Fitness Training",
-    slug: "strength-fitness-training",
-    description:
-      "Science-driven strength training and athletic conditioning designed to improve physical capacity, prevent injury, and elevate your fitness levels.",
-    image: "https://framerusercontent.com/images/fd7H4g2SyDOLmrGUUi05FNqLbw.jpg",
-    tags: ["Strength", "Fitness", "Performance"],
-  },
-  {
-    title: "Posture Correction",
-    slug: "posture-correction",
-    description:
-      "Targeted alignment therapy and corrective exercises to address postural strain, neck or back stiffness, and computer-related tension.",
-    image: "https://framerusercontent.com/images/WYxFJy7m3eXg59BXG2MbDNE4M.jpg",
-    tags: ["Alignment", "Posture", "Ergonomics"],
-  },
-  {
-    title: "Sports Rehab",
-    slug: "sports-rehabilitation",
-    description:
-      "Dedicated, phase-based physical therapy focused on restoring athletic mechanics, speed, and sports-specific strength safely and rapidly.",
-    image: "https://framerusercontent.com/images/4NjxubX1dvlVTQPtjdeJOn62UU.jpg",
-    tags: ["Sports", "Injury Rehab", "Agility"],
-  },
-  {
-    title: "ANC – PNC Care (Antenatal & Postnatal)",
+    title: "ANC / PNC Care",
     slug: "anc-pnc-care",
     description:
-      "Specialized, compassionate physiotherapy addressing prenatal wellness, safe core exercises during pregnancy, and complete postpartum pelvic floor recovery.",
-    image: "https://framerusercontent.com/images/EuE334zfvtYBi9vwSBstq2xqJY.jpg",
+      "Compassionate antenatal and postnatal care supporting maternal health and recovery.",
+    image: "/images/anc_pnc_physio.png",
     tags: ["Maternal Care", "Prenatal", "Postnatal"],
+  },
+  {
+    title: "Functional Training",
+    slug: "functional-training",
+    description:
+      "Science-driven athletic conditioning to elevate physical capacity and overall performance.",
+    image: "/images/functional_training.png",
+    tags: ["Fitness", "Performance", "Conditioning"],
+  },
+  {
+    title: "Geriatric Care",
+    slug: "geriatric-care",
+    description:
+      "Tailored physical therapy for seniors to improve mobility, balance, and quality of life.",
+    image: "/images/geriatric_physio.png",
+    tags: ["Seniors", "Mobility", "Care"],
   },
 ];
 
@@ -77,7 +69,7 @@ export default function ServicesPage() {
         <div className="relative mx-auto max-w-7xl">
           <div className="inline-flex items-center gap-2 rounded-full border border-white/20 px-5 py-2 mb-6">
             <span className="text-accent font-bold">//</span>
-            <span className="text-sm font-semibold tracking-wide text-white">Our Expertise</span>
+            <span className="text-sm font-semibold tracking-wide text-white">Our Services</span>
           </div>
           <h1 className="max-w-3xl text-[32px] sm:text-[44px] lg:text-[52px] leading-[1.2] font-semibold tracking-tight text-white">
             Personalised treatment<br />

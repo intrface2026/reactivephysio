@@ -19,9 +19,41 @@ const display = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "Reactive – Premium Home-Based Physiotherapy, Nagpur",
+  metadataBase: new URL("https://reactivephysicaltherapy.com"), // Replace with actual domain when live
+  title: {
+    default: "Reactive – Premium Home-Based Physiotherapy in Nagpur",
+    template: "%s | Reactive Physiotherapy Nagpur",
+  },
   description:
-    "Reactive delivers professional, science-driven physiotherapy and rehabilitation services in the comfort of your home in Nagpur. Led by Dr. Falguni Ambare.",
+    "Reactive delivers professional, science-driven physiotherapy and rehabilitation services in the comfort of your home in Nagpur. Serving Ramdaspeth, Dharampeth, Pratap Nagar, and more. Led by Dr. Falguni Ambare.",
+  keywords: [
+    "Best physiotherapist in Nagpur",
+    "Home physiotherapy Nagpur",
+    "Physiotherapy in Ramdaspeth",
+    "Physiotherapy in Dharampeth",
+    "Physiotherapy in Pratap Nagar",
+    "Sports rehabilitation Nagpur",
+    "Home service physiotherapist",
+    "Dr. Falguni Ambare",
+  ],
+  openGraph: {
+    title: "Reactive – Premium Home-Based Physiotherapy in Nagpur",
+    description:
+      "Reactive delivers professional, science-driven physiotherapy and rehabilitation services in the comfort of your home in Nagpur.",
+    url: "https://reactivephysicaltherapy.com",
+    siteName: "Reactive Physical Therapy",
+    locale: "en_IN",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Reactive – Premium Home-Based Physiotherapy in Nagpur",
+    description:
+      "Professional, science-driven physiotherapy services at home in Nagpur.",
+  },
+  alternates: {
+    canonical: "/",
+  },
 };
 
 import { SecurityProvider } from "@/components/SecurityProvider";
@@ -31,8 +63,50 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "MedicalClinic",
+    name: "Reactive Physical Therapy",
+    url: "https://reactivephysicaltherapy.com",
+    logo: "https://reactivephysicaltherapy.com/logo/logo.png",
+    description: "Premium Home-Based Physiotherapy and Rehabilitation Services in Nagpur.",
+    founder: {
+      "@type": "Person",
+      name: "Dr. Falguni Ambare",
+    },
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Nagpur",
+      addressRegion: "Maharashtra",
+      addressCountry: "IN",
+    },
+    areaServed: [
+      { "@type": "City", name: "Nagpur" },
+      { "@type": "Neighborhood", name: "Ramdaspeth" },
+      { "@type": "Neighborhood", name: "Dharampeth" },
+      { "@type": "Neighborhood", name: "Pratap Nagar" }
+    ],
+    medicalSpecialty: "Physiotherapy",
+    priceRange: "$$",
+    serviceArea: {
+      "@type": "GeoCircle",
+      geoMidpoint: {
+        "@type": "GeoCoordinates",
+        latitude: 21.1458,
+        longitude: 79.0882
+      },
+      geoRadius: "20000" // 20km radius around Nagpur
+    }
+  };
+
   return (
     <html lang="en">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className={`${sans.variable} ${display.variable} antialiased font-sans flex flex-col min-h-screen relative`}>
         <SecurityProvider>
           <Header />

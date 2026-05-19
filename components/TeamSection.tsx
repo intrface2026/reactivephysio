@@ -29,12 +29,18 @@ export function TeamSection() {
             transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
             className="relative flex justify-center lg:justify-end"
           >
-            {/* Elegant double-border frame background */}
-            <div className="absolute -bottom-4 -left-4 -right-4 -top-4 rounded-[24px] border border-black/[0.04] bg-black/[0.01] pointer-events-none" />
-            <div className="absolute -bottom-2 -left-2 -right-2 -top-2 rounded-[22px] border border-black/[0.06] bg-black/[0.01] pointer-events-none" />
-            
-            <div className="relative overflow-hidden rounded-[20px] bg-white p-3 shadow-[0_20px_50px_rgba(0,0,0,0.06)] w-full max-w-[440px] aspect-[4/5]">
-              <div className="relative w-full h-full overflow-hidden rounded-[14px] bg-[#fdfaf9]">
+            {/* Glassmorphism ambient glow behind the card */}
+            <div
+              aria-hidden
+              className="pointer-events-none absolute -inset-4 rounded-[32px] opacity-40"
+              style={{
+                background: "radial-gradient(ellipse at center, rgba(99,179,237,0.25) 0%, rgba(25,79,162,0.15) 50%, transparent 80%)",
+                filter: "blur(24px)",
+              }}
+            />
+
+            <div className="relative overflow-hidden rounded-[24px] bg-white/10 backdrop-blur-xl p-3 shadow-[0_8px_48px_-8px_rgba(255,255,255,0.12),0_0_0_1px_rgba(255,255,255,0.2)] border border-white/25 w-full max-w-[440px] aspect-[4/5]">
+              <div className="relative w-full h-full overflow-hidden rounded-[14px] bg-white/5">
                 <Image
                   src="/Dr.Flaguni_Ambare.jpeg"
                   alt="Dr. Falguni Ambare"

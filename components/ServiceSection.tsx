@@ -8,41 +8,60 @@ import { AnimatedButton } from "./AnimatedButton";
 
 const services = [
   {
-    title: "Science-based Physiotherapy & Pain Relief",
-    description: "Evidence-backed care to target pain, reduce inflammation, and restore natural movement patterns.",
-    image: "https://framerusercontent.com/images/3ReT5xeX5z4tvOwGXq4uK0APU4.jpg",
-    link: "/service/physiotherapy-pain-relief",
+    title: "Physiotherapy - Musculoskeletal",
+    description: "Expert care for muscle and joint pain, focusing on mobility and strength recovery.",
+    image: "/images/muskulo_physio.png",
+    link: "/service/physiotherapy-muskulo",
+    pricing: [
+      { label: "Daily", price: "₹800" },
+      { label: "7 Sessions", price: "₹5,600" },
+      { label: "15 Sessions", price: "₹12,000" },
+      { label: "24 Sessions", price: "₹19,000" },
+    ]
   },
   {
-    title: "Personalised Rehab & Post-Rehabilitation",
-    description: "Customized rehabilitation programs designed to rebuild strength and safety after injury or surgery.",
-    image: "https://framerusercontent.com/images/x9BbpMW2l1ETXjm885q6jCtWRYc.jpg",
-    link: "/service/personalised-rehab-post-rehabilitation",
+    title: "Physiotherapy - Neuro",
+    description: "Specialized neurological rehabilitation to restore movement, balance, and function.",
+    image: "/images/neuro_physio.png",
+    link: "/service/physiotherapy-neuro",
+    pricing: [
+      { label: "Daily", price: "₹1,000" },
+      { label: "7 Sessions", price: "₹7,000" },
+      { label: "15 Sessions", price: "₹15,000" },
+      { label: "24 Sessions", price: "₹20,000" },
+    ]
   },
   {
-    title: "Strength & Fitness Training",
-    description: "Science-driven athletic conditioning to elevate physical capacity, endurance, and overall performance.",
-    image: "https://framerusercontent.com/images/fd7H4g2SyDOLmrGUUi05FNqLbw.jpg",
-    link: "/service/strength-fitness-training",
-  },
-  {
-    title: "Posture Correction",
-    description: "Targeted posture training and corrective exercises to relieve strain and restore alignment.",
-    image: "https://framerusercontent.com/images/WYxFJy7m3eXg59BXG2MbDNE4M.jpg",
-    link: "/service/posture-correction",
-  },
-  {
-    title: "Sports Rehab",
-    description: "Elite physical rehabilitation tailored to get athletes back in action safely and rapidly.",
-    image: "https://framerusercontent.com/images/4NjxubX1dvlVTQPtjdeJOn62UU.jpg",
-    link: "/service/sports-rehabilitation",
-  },
-  {
-    title: "ANC – PNC Care",
-    description: "Specialized, compassionate therapy supporting mothers before and after childbirth with pelvic health.",
-    image: "https://framerusercontent.com/images/EuE334zfvtYBi9vwSBstq2xqJY.jpg",
+    title: "ANC / PNC Care",
+    description: "Compassionate antenatal and postnatal care supporting maternal health and recovery.",
+    image: "/images/anc_pnc_physio.png",
     link: "/service/anc-pnc-care",
+    pricing: [
+      { label: "Daily", price: "₹700" },
+      { label: "7 Sessions", price: "₹5,200" },
+      { label: "24 Sessions", price: "₹18,000" },
+    ]
   },
+  {
+    title: "Functional Training",
+    description: "Science-driven athletic conditioning to elevate physical capacity and overall performance.",
+    image: "/images/functional_training.png",
+    link: "/service/functional-training",
+    pricing: [
+      { label: "Daily", price: "₹800" },
+    ]
+  },
+  {
+    title: "Geriatric Care",
+    description: "Tailored physical therapy for seniors to improve mobility, balance, and quality of life.",
+    image: "/images/geriatric_physio.png",
+    link: "/service/geriatric-care",
+    pricing: [
+      { label: "Daily", price: "₹700" },
+      { label: "7 Sessions", price: "₹5,200" },
+      { label: "24 Sessions", price: "₹18,000" },
+    ]
+  }
 ];
 
 export function ServiceSection() {
@@ -61,7 +80,7 @@ export function ServiceSection() {
             >
               <span className="text-accent font-bold">{"//"}</span>
               <span className="text-sm font-semibold tracking-wide text-surface">
-                Our Expertise
+                Our Services
               </span>
             </motion.div>
             <motion.h2
@@ -71,8 +90,8 @@ export function ServiceSection() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="max-w-xl text-[30px] leading-[1.2] font-semibold tracking-tight text-surface sm:text-[36px] lg:text-[44px]"
             >
-              Personalised treatment <br className="hidden md:block" />
-              plans tailored for each patient
+              Explore our services <br className="hidden md:block" />
+              with transparent pricing
             </motion.h2>
           </div>
 
@@ -120,16 +139,33 @@ export function ServiceSection() {
                   />
 
                   {/* Gradient Overlay */}
-                  <div className="absolute inset-0 bg-linear-to-t from-black/95 via-black/50 to-black/10 opacity-80 transition-opacity duration-500 group-hover:opacity-90" />
+                  <div className="absolute inset-0 bg-linear-to-t from-black/95 via-black/60 to-black/10 opacity-80 transition-opacity duration-500 group-hover:opacity-90" />
 
                   {/* Content */}
-                  <div className="absolute inset-x-0 bottom-0 flex flex-col justify-end p-8 md:p-12 text-white z-10">
-                    <h6 className="mb-3 text-[24px] sm:text-[32px] md:text-[40px] leading-tight font-bold tracking-tight">
+                  <div 
+                    className="absolute inset-x-0 bottom-0 flex flex-col justify-end px-8 pt-8 sm:px-10 md:px-12 md:pt-12 text-white z-10"
+                    style={{
+                      paddingBottom: `calc(2.5rem + ${index * 30}px)`
+                    }}
+                  >
+                    <h6 className="mb-3 text-[24px] sm:text-[32px] md:text-[36px] leading-tight font-bold tracking-tight">
                       {service.title}
                     </h6>
                     <p className="text-sm sm:text-base font-medium text-white/80 max-w-2xl leading-relaxed">
                       {service.description}
                     </p>
+                    
+                    {/* Pricing */}
+                    {service.pricing && (
+                      <div className="mt-6 grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl">
+                        {service.pricing.map((priceItem, i) => (
+                          <div key={i} className="flex flex-col border-l-[3px] border-brand-start pl-4 py-1 backdrop-blur-sm bg-black/10 rounded-r-md">
+                            <span className="text-[11px] sm:text-xs font-semibold text-white/70 uppercase tracking-widest mb-1">{priceItem.label}</span>
+                            <span className="text-lg sm:text-xl font-bold text-white tracking-tight">{priceItem.price}</span>
+                          </div>
+                        ))}
+                      </div>
+                    )}
                     
                     {/* Modern interactive slide-up badge */}
                     <div className="mt-6 flex items-center gap-2 text-sm font-semibold text-brand-start opacity-0 translate-y-4 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0">
