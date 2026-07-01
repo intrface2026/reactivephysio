@@ -73,7 +73,7 @@ export function HeroSection() {
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.55 }}
         >
           <AnimatedButton
-            href="https://portal.reactivephysicaltherapy.com/register?role=patient"
+            href="https://portal.reactivephysio.in/auth/patient/register"
             text="Book an Appointment"
             className="bg-gradient-to-r from-brand-start to-brand-end text-white px-9 py-4 sm:px-11 sm:py-4.5 rounded-full text-sm sm:text-base font-bold shadow-lg transition-all hover:shadow-[0_8px_28px_rgba(30,64,175,0.3)]"
             icon={<CalendarCheck className="h-5 w-5" />}

@@ -7,7 +7,7 @@ import { motion, useInView } from "framer-motion";
 import { MapPin, Mail, Phone, ArrowRight, Shield } from "lucide-react";
 
 const patientLinks = [
-  { name: "Book an Appointment", href: "https://portal.reactivephysicaltherapy.com/register?role=patient" },
+  { name: "Book an Appointment", href: "https://portal.reactivephysio.in/auth/patient/register" },
   { name: "Musculoskeletal Therapy", href: "/service/physiotherapy-muskulo" },
   { name: "Neurological Rehab", href: "/service/physiotherapy-neuro" },
   { name: "ANC / PNC Maternity Care", href: "/service/anc-pnc-care" },
@@ -16,9 +16,9 @@ const patientLinks = [
 ];
 
 const providerLinks = [
-  { name: "Join the Provider Network", href: "/careers" },
-  { name: "Apply as a Therapist", href: "https://portal.reactivephysicaltherapy.com/register?role=pt" },
-  { name: "Practitioner Portal Login", href: "https://portal.reactivephysicaltherapy.com/login" },
+  { name: "Join the Provider Network", href: "https://portal.reactivephysio.in/auth/physio/register" },
+  { name: "Apply as a Therapist", href: "https://portal.reactivephysio.in/auth/physio/register" },
+  { name: "Practitioner Portal Login", href: "https://portal.reactivephysio.in" },
   { name: "Credentialing Guidelines", href: "/careers#process" },
   { name: "Dispute-Free Payouts Info", href: "/careers#why-join" },
 ];

@@ -76,7 +76,7 @@ export function CTASection() {
             </div>
             
             <Link
-              href="https://portal.reactivephysicaltherapy.com/register?role=patient"
+              href="https://portal.reactivephysio.in/auth/patient/register"
               className="relative z-10 inline-flex items-center justify-center gap-2.5 self-start rounded-full bg-white px-8 py-4 text-sm font-bold !text-black transition-colors hover:bg-zinc-200 w-full sm:w-auto"
             >
               <Calendar className="h-4.5 w-4.5" />
@@ -112,7 +112,7 @@ export function CTASection() {
             </div>
             
             <Link
-              href="/careers"
+              href="https://portal.reactivephysio.in/auth/physio/register"
               className="relative z-10 inline-flex items-center justify-center gap-2.5 self-start rounded-full border border-zinc-700 bg-transparent px-8 py-4 text-sm font-bold text-white transition-all hover:border-zinc-500 hover:bg-zinc-900 w-full sm:w-auto"
             >
               <UserCheck className="h-4.5 w-4.5" />

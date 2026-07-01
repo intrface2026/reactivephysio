@@ -46,7 +46,7 @@ const pagesLinks = [
   { name: "Pricing", href: "/pricing" },
   { name: "Careers", href: "/careers" },
   { name: "Contact", href: "/contact" },
-  { name: "Client Portal", href: "https://portal.reactivephysicaltherapy.com" },
+  { name: "Client Portal", href: "https://portal.reactivephysio.in" },
 ];
 
 const allMobileLinks = [
@@ -56,9 +56,9 @@ const allMobileLinks = [
   { name: "Case Studies", href: "/case-studies" },
   { name: "Pricing", href: "/pricing" },
   { name: "Blogs", href: "/blog" },
-  { name: "Join as a Physio", href: "/careers" },
+  { name: "Join as a Physio", href: "https://portal.reactivephysio.in/auth/physio/register" },
   { name: "Contact", href: "/contact" },
-  { name: "Client Portal", href: "https://portal.reactivephysicaltherapy.com" },
+  { name: "Client Portal", href: "https://portal.reactivephysio.in" },
 ];
 
 // All desktop link keys in order (for the floating pill)
@@ -142,7 +142,7 @@ export function Header() {
     if (link.href === "/careers") {
       return {
         name: isCareersPage ? "Join as a Patient" : "Join as a Physio",
-        href: isCareersPage ? "https://portal.reactivephysicaltherapy.com/register?role=patient" : "/careers"
+        href: isCareersPage ? "https://portal.reactivephysio.in/auth/patient/register" : "https://portal.reactivephysio.in/auth/physio/register"
       };
     }
     return link;
@@ -205,7 +205,7 @@ export function Header() {
           {/* ── Right Side ── */}
           <div className="flex items-center gap-4">
             <Link
-              href={isCareersPage ? "https://portal.reactivephysicaltherapy.com/register?role=patient" : "/careers"}
+              href={isCareersPage ? "https://portal.reactivephysio.in/auth/patient/register" : "https://portal.reactivephysio.in/auth/physio/register"}
               className={`hidden md:inline-flex items-center justify-center rounded-full border px-5 py-2.5 text-xs font-bold uppercase tracking-widest transition-all duration-300 ${
                 scrolled
                   ? "border-brand-start/20 bg-gradient-to-r from-brand-start to-brand-end text-white hover:opacity-95 shadow-sm"
