@@ -111,7 +111,7 @@ export default function CareersPage() {
           
           <div className="mt-10 flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
             <AnimatedButton
-              href="https://portal.reactivephysicaltherapy.com/register?role=pt"
+              href="https://portal.reactivephysio.in/auth/physio/register"
               text="Apply Now"
               className="bg-gradient-to-r from-brand-start to-brand-end text-white px-8 py-4 font-bold shadow-lg transition-all"
               icon={<UserPlus className="h-5 w-5" />}
@@ -220,7 +220,7 @@ export default function CareersPage() {
             Apply as a partner today and start accepting home-care client visits in your preferred Nagpur neighborhoods on your own schedule.
           </p>
           <AnimatedButton
-            href="https://portal.reactivephysicaltherapy.com/register?role=pt"
+            href="https://portal.reactivephysio.in/auth/physio/register"
             text="Apply as a Physio"
             className="bg-white hover:bg-zinc-100 !text-black transition-all border-0 shadow-md px-8 py-4 font-bold"
             icon={<UserCheck className="h-5 w-5 text-black" />}
